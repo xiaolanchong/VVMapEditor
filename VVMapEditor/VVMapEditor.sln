@@ -1,0 +1,92 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GuiLib", "GuiLib\GUILIB\GuiLib.vcxproj", "{6F3A1336-57AE-4E33-8851-173A95AA5955}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VVMapEditor", "VVMapEditor.vcxproj", "{ADBB4B41-E9B9-44B5-978D-027ECFD61421}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VVMapInterface", "..\..\SRS\VVMapInterface\trunk\VVMapInterface.vcproj", "{0B7C220F-2C7C-44DE-8FD1-A13A810121F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7226F36B-9B36-4B4C-AF27-68D13EAD1C12} = {7226F36B-9B36-4B4C-AF27-68D13EAD1C12}
+		{9B7F809F-CEE1-40BF-9C32-B02CBC339FC9} = {9B7F809F-CEE1-40BF-9C32-B02CBC339FC9}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mapped Image", "..\..\mapimg\trunk\mapimg71.vcproj", "{A49CC018-A722-442B-B2BF-59D74DDA9077}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BCBF187F-49BC-450A-A05D-6B81DC23BF6F} = {BCBF187F-49BC-450A-A05D-6B81DC23BF6F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlibex", "..\..\..\..\3rd_party\zlibex121\zlibex\zlibex.vcproj", "{9B7F809F-CEE1-40BF-9C32-B02CBC339FC9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fourier", "..\..\SRS\trunk\SourceLibrary\Fourier\Fourier.vcproj", "{7226F36B-9B36-4B4C-AF27-68D13EAD1C12}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseClasses Apr05", "..\..\..\..\3rd_party\BaseClasses_Apr05\baseclasses71.vcproj", "{D6261C25-7FBB-4487-A654-2B8D930016E9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DBBridge", "..\..\DBBridge\trunk\DBBridge.vcproj", "{49660352-3E05-4231-A490-D01F87A694C1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElveesTools", "..\..\..\..\CommonLibs\HEAD\ElveesTools\trunk\ElveesTools71.vcproj", "{BCBF187F-49BC-450A-A05D-6B81DC23BF6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Unicode Debug|x86 = Unicode Debug|x86
+		Unicode Release|x86 = Unicode Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Debug|x86.ActiveCfg = Debug|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Debug|x86.Build.0 = Debug|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Release|x86.ActiveCfg = Release|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Release|x86.Build.0 = Release|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Unicode Debug|x86.Build.0 = Unicode Debug|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{6F3A1336-57AE-4E33-8851-173A95AA5955}.Unicode Release|x86.Build.0 = Unicode Release|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Debug|x86.ActiveCfg = Debug|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Debug|x86.Build.0 = Debug|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Release|x86.ActiveCfg = Release|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Release|x86.Build.0 = Release|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Unicode Debug|x86.Build.0 = Unicode Debug|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{ADBB4B41-E9B9-44B5-978D-027ECFD61421}.Unicode Release|x86.Build.0 = Unicode Release|Win32
+		{0B7C220F-2C7C-44DE-8FD1-A13A810121F5}.Debug|x86.ActiveCfg = Debug|Win32
+		{0B7C220F-2C7C-44DE-8FD1-A13A810121F5}.Release|x86.ActiveCfg = Release|Win32
+		{0B7C220F-2C7C-44DE-8FD1-A13A810121F5}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{0B7C220F-2C7C-44DE-8FD1-A13A810121F5}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{A49CC018-A722-442B-B2BF-59D74DDA9077}.Debug|x86.ActiveCfg = Debug|Win32
+		{A49CC018-A722-442B-B2BF-59D74DDA9077}.Release|x86.ActiveCfg = Release|Win32
+		{A49CC018-A722-442B-B2BF-59D74DDA9077}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{A49CC018-A722-442B-B2BF-59D74DDA9077}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{9B7F809F-CEE1-40BF-9C32-B02CBC339FC9}.Debug|x86.ActiveCfg = Debug|Win32
+		{9B7F809F-CEE1-40BF-9C32-B02CBC339FC9}.Release|x86.ActiveCfg = Release|Win32
+		{9B7F809F-CEE1-40BF-9C32-B02CBC339FC9}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{9B7F809F-CEE1-40BF-9C32-B02CBC339FC9}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{7226F36B-9B36-4B4C-AF27-68D13EAD1C12}.Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{7226F36B-9B36-4B4C-AF27-68D13EAD1C12}.Release|x86.ActiveCfg = Unicode Release|Win32
+		{7226F36B-9B36-4B4C-AF27-68D13EAD1C12}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{7226F36B-9B36-4B4C-AF27-68D13EAD1C12}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{D6261C25-7FBB-4487-A654-2B8D930016E9}.Debug|x86.ActiveCfg = Debug|Win32
+		{D6261C25-7FBB-4487-A654-2B8D930016E9}.Release|x86.ActiveCfg = Release|Win32
+		{D6261C25-7FBB-4487-A654-2B8D930016E9}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{D6261C25-7FBB-4487-A654-2B8D930016E9}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{49660352-3E05-4231-A490-D01F87A694C1}.Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{49660352-3E05-4231-A490-D01F87A694C1}.Release|x86.ActiveCfg = Unicode Release|Win32
+		{49660352-3E05-4231-A490-D01F87A694C1}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{49660352-3E05-4231-A490-D01F87A694C1}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+		{BCBF187F-49BC-450A-A05D-6B81DC23BF6F}.Debug|x86.ActiveCfg = Debug|Win32
+		{BCBF187F-49BC-450A-A05D-6B81DC23BF6F}.Release|x86.ActiveCfg = Release|Win32
+		{BCBF187F-49BC-450A-A05D-6B81DC23BF6F}.Unicode Debug|x86.ActiveCfg = Unicode Debug|Win32
+		{BCBF187F-49BC-450A-A05D-6B81DC23BF6F}.Unicode Release|x86.ActiveCfg = Unicode Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0F36FFD-DBF9-429C-9B36-A94EB9A5DDF0}
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal

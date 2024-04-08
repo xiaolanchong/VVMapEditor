@@ -1,0 +1,176 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "..\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_CONTROLBAR          BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_DOCKBAR             BITMAP  MOVEABLE PURE   "res\\bitmap1.bmp"
+IDB_DOCKBAROFFICE       BITMAP  MOVEABLE PURE   "res\\DockOffice.bmp"
+IDB_MDIICONS            BITMAP  MOVEABLE PURE   "res\\bmp00001.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_CONTROLBAR TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_CB_ALLOW_DOCKING
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "..\\resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""GuiLib.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENUSYS MENU DISCARDABLE 
+BEGIN
+    POPUP "System"
+    BEGIN
+        MENUITEM "&Restore",                    547
+        MENUITEM "&Move",                       3, GRAYED
+        MENUITEM "&Size",                       5, GRAYED
+        MENUITEM "Mi&nimize",                   549
+        MENUITEM "Ma&ximise",                   549, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Close Ctrl+F4",               545
+        MENUITEM SEPARATOR
+        MENUITEM "Next Ctrl+F6",                548
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ARROWDOWN           ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ARROWRIGHT          ICON    DISCARDABLE     "res\\ico00001.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CB_ALLOW_DOCKING     "Allow Docking"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CB_HIDE              "Hide"
+    IDS_KEY_NUM_7           "Num 7"
+    IDS_NEY_NUM_1           "Num 1"
+    IDS_KEY_NUM_9           "Num 9"
+    IDS_KEY_NUM_3           "Num 3"
+    IDS_KEY_NUM_0           "Num 0"
+    IDS_KEY_NUM_DEL         "Num Del"
+    IDS_KEY_HOME            "Home"
+    IDS_KEY_END             "End"
+    IDS_KEY_PGUP            "PgUp"
+    IDS_KEY_PGDN            "PgDn"
+    IDS_KEY_INS             "Ins"
+    IDS_KEY_DEL             "Del"
+    IDS_KEY_BREAK           "Break"
+    IDS_KEY_CTRL_BREAK      "Ctrl+Break"
+    IDS_KEY_ALT_MODIFIER    "Alt+"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_KEY_CTRL_MODIFIER   "Ctrl+"
+    IDS_KEY_SHIFT_MODIFIER  "Shift+"
+    IDS_CLOSE               "Close"
+    IDS_RESTORE             "Restore"
+    IDS_MINIMIZE            "Minimize"
+    IDS_SCROLL_RIGHT        "Sroll Right"
+    IDS_SCROLL_LEFT         "Scroll Left"
+    IDS_BACK                "Back"
+    IDS_FORWARD             "Forward"
+    IDS_MENU                "Menu"
+    IDS_ITEM_DOWN           "Item Down"
+    IDS_ITEM_UP             "Item Up"
+    IDS_INSERT              "Insert"
+    IDS_DELETE              "Delete"
+    IDS_OPTIONS             "Options:"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#include "GuiLib.rc2"  // non-Microsoft Visual C++ edited resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

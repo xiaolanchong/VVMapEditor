@@ -1,0 +1,35 @@
+[*] Фиксы
+[+] Фичи
+[-] Известные баги
+[.] Примечания по другим проектам
+
+2004-Oct-19 Build 1.2.5 by Eugene Gorbachev
+[+] Строковые ресурсы и imagelist подгружается явно из длл
+[*] В GuiMDITabWnd кнопки скролла и закрытия имели сдвинутые изображения
+
+2004-09-08 Build 1.1.5.15 by Eugene V.Gorbachev
+[*] Если пункт меню checked, то поверх галочки рисовалась для него иконка, see CCoolMenuManager::OnDrawItem
+[+] изменена картинка для Allow docking в controlbar'е
+
+2004-09-01 Build 1.1.5.14 by Eugene V. Gorbachev
+[+] добавлен новая ф-я CGuiToolBarWnd::SetButtonDropDown, к кнопке можно аттачить меню через HMENU
+
+2004-08-24 Build 1.1.5.13 by Kirill V. Lyadvinsky
+[*] Не рисовалась стрелка в тулбаре при стиле BTNS_WHOLEDROPDOWN
+
+2004-08-04 Build 1.1.5.7 by Kirill V. Lyadvinsky
+[*] Добавлена функция CControlBar::SetWindowText для корректного апдейта хедера
+
+2004-07-14 Build 1.1.5.6 by Kirill V. Lyadvinsky
+[+] Тип TYPE_SDI в CGuiMDITabbed для поддержки SDI программ
+[+] Функция InitMDITabbed() в CGuiFrameWnd
+[+] Поддержка сообщения TCN_SELCHANGE для CGuiTabWnd
+[+] Функция EnableClose(BOOL) для управление CLOSEBOX
+[-] Глюкает	CGuiControlBar::SetKeepSizeWhenDocked
+
+2004-07-13 by Kirill V. Lyadvinsky
+[+] Поддержка флага WS_SYSMENU для control bar и tool bar
+[+] Поддержка UNICODE
+[+] Изменен механизм докинга
+[+] Добавлена функция CGuiControlBar::SetKeepSizeWhenDocked(BOOL)
+[+] Введен changelog.txt

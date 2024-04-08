@@ -1,0 +1,1757 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "../resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ANCHOR_ON_MAP       BITMAP                  "res\\bmp00003.bmp"
+IDR_MENU                BITMAP                  "res\\toolbar1.bmp"
+IDR_TOOLBAR1            BITMAP                  "res\\bmp00001.bmp"
+IDB_CONTROL_POINT       BITMAP                  "res\\bitmap1.bmp"
+IDB_PAUSE               BITMAP                  "res\\bitmap2.bmp"
+IDB_CONTROL_ANCHOR      BITMAP                  "res\\bmp00002.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "../resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""VVMapEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CROSS2              CURSOR                  "res\\cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MASTER MENU 
+BEGIN
+    POPUP "Мастер"
+    BEGIN
+        POPUP "Фон"
+        BEGIN
+            MENUITEM "Изображение...",              ID_MASTER_IMAGE
+            MENUITEM "Видео...",                    ID_MASTER_VIDEO
+            MENUITEM "Камера",                      ID_MASTER_CAMERA
+            MENUITEM "Пустой",                      ID_MASTER_EMTPY
+        END
+        MENUITEM "Обратно",                     ID_MASTER_ALLBG
+        POPUP "Таблица"
+        BEGIN
+            MENUITEM "Сохранить",                   ID_MASTER_SAVE_TABLE
+            MENUITEM "Открыть",                     ID_MASTER_OPEN_TABLE
+        END
+        MENUITEM "Установить ID...",            ID_MASTER_SETID
+        MENUITEM "Включить распознавание",      ID_MASTER_SRS
+    END
+    POPUP "Карта"
+    BEGIN
+        MENUITEM "Изображение...",              ID_MAP_IMAGE
+        MENUITEM "Экспорт",                     ID_MAP_EXPORT
+    END
+END
+
+IDR_POINTS MENU 
+BEGIN
+    POPUP "Группы"
+    BEGIN
+        MENUITEM "Удалить",                     ID_GROUP_DELETE
+    END
+    POPUP "Точки"
+    BEGIN
+        MENUITEM "Удалить",                     ID_POINTS_DELETE
+    END
+END
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Файл"
+    BEGIN
+        MENUITEM "&Новый\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "&Открыть..\tCtrl+O",          ID_FILE_OPEN
+        MENUITEM "Открыть из БД",               ID_FILE_OPEN_DB
+        MENUITEM "Сохранить\tCtrl+S",           ID_FILE_SAVE
+        MENUITEM "Сохранить как...",            ID_FILE_SAVE_AS
+        MENUITEM "Сохранить в БД",              ID_FILE_SAVE_DB
+        MENUITEM SEPARATOR
+        MENUITEM "Печать...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Превью",                      ID_FILE_PRINT_PREVIEW
+        MENUITEM "Настроить печать..",          ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Вы&ход",                      ID_APP_EXIT
+    END
+    POPUP "&Редактировать"
+    BEGIN
+        MENUITEM "&Отменить",                   ID_EDIT_UNDO
+        MENUITEM "Повторить",                   ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Настройки...",                ID_EDIT_OPTIONS
+        MENUITEM "Настройки алгоритмов...",     ID_EDIT_INTERFACE_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Карта",                       ID_EDIT_MAP
+        MENUITEM "Точки",                       ID_EDIT_POINTS
+        MENUITEM "Размеры целей",               ID_EDIT_EXTENTS
+        MENUITEM "Направление карты",           ID_EDIT_MAP_ORIGIN
+        MENUITEM "Зоны невидимости",            ID_EDIT_IZ
+    END
+    POPUP "&Вид"
+    BEGIN
+        MENUITEM "Инструменты",                 ID_VIEW_TOOLBAR
+        MENUITEM "Статус",                      ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Точки",                       ID_VIEW_POINTS
+        MENUITEM "Размеры целей",               ID_VIEW_EXTENTS
+        MENUITEM "Области обзора",              ID_VIEW_POLYGONS
+        MENUITEM "Точки GetXY",                 ID_VIEW_GETXY_POINTS
+        MENUITEM "Высоты",                      ID_VIEW_HEIGHTS
+        MENUITEM "Зоны невидимости",            ID_VIEW_IZ
+        MENUITEM "Номера точек",                ID_VIEW_POINT_NUMBER
+    END
+    POPUP "Соответствие"
+    BEGIN
+        MENUITEM "Создать...",                  ID_COR_CREATE
+        MENUITEM "Скомпилировать",              ID_COR_COMPILE
+        MENUITEM "Склеить 2 мастера",           ID_COR_MERGE_2MASTERS
+        POPUP "Создать панораму"
+        BEGIN
+            MENUITEM "Без мастеров",                ID_MERGE
+        END
+        POPUP "Удалить склейку"
+        BEGIN
+            MENUITEM "Без мастеров",                ID_MERGE_DELETE
+        END
+        POPUP "Карты размеров"
+        BEGIN
+            MENUITEM "Без мастеров",                ID_EXTENT_MAP
+        END
+        MENUITEM "Стоп\tCtrl+Break",            ID_COR_STOP
+    END
+    POPUP "Окна"
+    BEGIN
+        POPUP "Камера"
+        BEGIN
+            MENUITEM "Без мастеров",                ID_MASTER_WINDOW
+        END
+        MENUITEM "Точки",                       ID_WINDOW_POINTS
+        MENUITEM "Качество",                    ID_WINDOW_QUALITY
+        MENUITEM "Добавить окно",               ID_VIEW_ADDWINDOW
+    END
+    POPUP "Помощь"
+    BEGIN
+        MENUITEM "О прогр&амме",                ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MENU TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_WINDOW_POINTS
+    BUTTON      ID_APP_EXIT
+END
+
+IDR_TOOLBAR1 TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_CB_ALLOW_DOCKING
+END
+
+IDR_MAINFRAME TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_SCALECOMBO
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+    SEPARATOR
+    BUTTON      ID_EDIT_MAP
+    BUTTON      ID_EDIT_POINTS
+    BUTTON      ID_EDIT_EXTENTS
+    BUTTON      ID_EDIT_MAP_ORIGIN
+    BUTTON      ID_EDIT_IZ
+    BUTTON      ID_EDIT_SP
+    BUTTON      ID_EDIT_RP
+    SEPARATOR
+    BUTTON      ID_VIEW_POINTS
+    BUTTON      ID_VIEW_POINT_NUMBER
+    BUTTON      ID_VIEW_EXTENTS
+    BUTTON      ID_VIEW_POLYGONS
+    BUTTON      ID_VIEW_GETXY_POINTS
+    BUTTON      ID_VIEW_HEIGHTS
+    BUTTON      ID_VIEW_IZ
+    SEPARATOR
+    BUTTON      ID_COR_CREATE
+    BUTTON      ID_COR_COMPILE
+    BUTTON      ID_COR_MERGE_2MASTERS
+    BUTTON      ID_COR_STOP
+    SEPARATOR
+    BUTTON      ID_VIDEO_PLAY
+    BUTTON      ID_VIDEO_STOP
+    BUTTON      ID_VIDEO_PAUSE
+    BUTTON      ID_VIDEO_RECORD
+    BUTTON      ID_VIDEO_PROPERTY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS DIALOGEX 0, 0, 240, 159
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Свой"
+BEGIN
+    CONTROL         "Spin1",IDC_SPIN_MRU,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,112,7,
+                    11,14
+    EDITTEXT        IDC_EDIT_MRU,83,7,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Недавние файлы",IDC_STATIC,7,9,72,8
+    GROUPBOX        "Фильтр точек",IDC_STATIC,7,30,56,53
+    CONTROL         "Нет",IDC_FILTER_NONE,"Button",BS_AUTORADIOBUTTON,13,42,
+                    29,10
+    CONTROL         "Слабый",IDC_FILTER_WEAK,"Button",BS_AUTORADIOBUTTON,13,
+                    55,42,10
+    CONTROL         "Сильный",IDC_FILTER_STRONG,"Button",BS_AUTORADIOBUTTON,
+                    13,68,46,10
+    LTEXT           "Static",IDC_STATIC_CROSS,83,35,62,49,WS_BORDER
+    EDITTEXT        IDC_EDIT_EXTENT,145,35,34,15,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_THICKNESS,145,70,34,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_EXTENT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS,179,35,12,15
+    CONTROL         "Spin2",IDC_SPIN_THICKNESS,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS,179,70,12,14
+    LTEXT           "Рамер указателя",IDC_STATIC,146,18,46,18
+    LTEXT           "Толщина указателя",IDC_STATIC,145,52,46,18
+END
+
+IDD_ANCHOR DIALOG  0, 0, 110, 135
+STYLE DS_FIXEDSYS | WS_CHILD
+BEGIN
+    EDITTEXT        IDC_EDIT_X,0,10,36,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Y,40,10,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Z,76,10,34,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ANCHORS,0,26,36,40,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Добавить",IDC_BUTTON_ADD,66,26,44,13
+    CONTROL         "List1",IDC_LIST_ANCHORS,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_AUTOARRANGE | LVS_EDITLABELS | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,0,41,110,93
+    CTEXT           "X",IDC_STATIC_X,0,0,36,10,SS_CENTERIMAGE
+    CTEXT           "Y",IDC_STATIC_Y,40,0,32,10,SS_CENTERIMAGE
+    CTEXT           "Z",IDC_STATIC_Z,76,0,34,10,SS_CENTERIMAGE
+END
+
+IDD_ID DIALOGEX 0, 0, 177, 47
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Новый ID"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,120,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,120,25,50,14
+    EDITTEXT        IDC_EDIT1,24,14,78,17,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+END
+
+IDD_CREATE_AREA DIALOGEX 0, 0, 202, 159
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Создать соответствие"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,146,121,48,14
+    PUSHBUTTON      "Отмена",IDCANCEL,146,138,48,14
+    LISTBOX         IDC_ID_ALL,7,20,64,95,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_ID_SELECT,130,20,64,95,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_ADD,82,20,37,15
+    PUSHBUTTON      ">>",IDC_ADD_ALL,82,45,37,15
+    PUSHBUTTON      "<",IDC_REMOVE,82,75,37,15
+    PUSHBUTTON      "<<",IDC_REMOVE_ALL,82,100,37,15
+    CTEXT           "Доступные",IDC_STATIC,7,3,64,17,SS_CENTERIMAGE
+    CTEXT           "Текущее",IDC_STATIC,130,2,64,8,SS_CENTERIMAGE
+    CTEXT           "соответствие",IDC_STATIC,130,10,64,8,SS_CENTERIMAGE
+END
+
+IDD_SHORT DIALOG  0, 0, 132, 22
+STYLE DS_3DLOOK | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS
+BEGIN
+    CONTROL         "Сохранить инфо",IDC_SHORT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,54,7,71,8
+END
+
+IDD_MERGE DIALOGEX 0, 0, 225, 47
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Диалог"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,168,7,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,168,24,50,14
+    COMBOBOX        IDC_LEFT,33,17,34,50,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RIGHT,120,18,34,47,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Левый",IDC_STATIC,7,18,24,12
+    LTEXT           "Правый",IDC_STATIC,89,18,32,12
+END
+
+IDD_LOADID DIALOGEX 0, 0, 136, 127
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Установить ID обзорной камеры"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,71,106,50,14
+    LISTBOX         IDC_LIST2,7,17,112,79,LBS_OWNERDRAWVARIABLE | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "ID из файла",IDC_STATIC,7,4,56,10
+    LTEXT           "ID окна",IDC_STATIC,63,4,58,10
+END
+
+IDD_SETID DIALOGEX 0, 0, 128, 127
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Изменить ID обзорной камеры"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,69,106,52,14
+    LISTBOX         IDC_LIST2,7,17,112,79,LBS_OWNERDRAWVARIABLE | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Текущий ID",IDC_STATIC,7,4,56,10
+    LTEXT           "Новый ID",IDC_STATIC,63,4,58,10
+    PUSHBUTTON      "Отмена",IDCANCEL,7,106,52,14
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 250, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "О программе"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "VVMapEditor\t\t1.0.0rc",IDC_VER_EDITOR,36,20,119,8,
+                    SS_NOPREFIX
+    LTEXT           "ElVEES (C) 2004",IDC_STATIC,37,6,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "VVMapInterface Version",IDC_VER_INT,36,33,119,8,
+                    SS_NOPREFIX
+END
+
+IDD_VIDEOCOMPRESSION DIALOGEX 0, 0, 350, 172
+STYLE DS_MODALFRAME | DS_FIXEDSYS | DS_CONTEXTHELP | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_CONTEXTHELP
+CAPTION "Выбор метода сжатия"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,241,151,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,293,151,50,14
+    LISTBOX         IDC_COMP_LIST,7,7,180,102,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Величина потока",IDC_USE_DATARATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,136,73,10
+    EDITTEXT        IDC_DATARATE,97,134,46,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "КБ/сек.",IDC_STATIC_DATARATE,148,138,28,8
+    CONTROL         "Кейфрейм каждые",IDC_USE_KEYFRAMES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,153,80,10
+    EDITTEXT        IDC_KEYRATE,97,152,46,13,ES_AUTOHSCROLL
+    LTEXT           "фреймов",IDC_STATIC_KEYFRAMES,148,154,32,8
+    GROUPBOX        "Информация о кодеке",IDC_STATIC,193,7,150,102
+    LTEXT           "Delta фреймы",IDC_STATIC,197,19,48,8
+    LTEXT           "FOURCC code",IDC_STATIC,197,29,48,8
+    LTEXT           "Driver name",IDC_STATIC,197,39,39,8
+    LTEXT           "Ограничения формата:",IDC_STATIC,198,62,79,8
+    LISTBOX         IDC_SIZE_RESTRICTIONS,198,70,140,35,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Настройка",IDC_CONFIGURE,241,114,50,14
+    PUSHBUTTON      "&О кодеке",IDC_ABOUT,293,114,50,14
+    LTEXT           "",IDC_STATIC_DELTA,275,19,63,8
+    LTEXT           "",IDC_STATIC_FOURCC,275,29,63,8
+    LTEXT           "",IDC_STATIC_DRIVER,275,39,63,8
+    LTEXT           "&Качество",IDC_STATIC_QUALITY_LABEL,7,114,32,14,
+                    SS_CENTERIMAGE
+    CONTROL         "Slider1",IDC_QUALITY_SLIDER,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,38,114,130,14
+    EDITTEXT        IDC_EDIT_QUALITY,171,115,27,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_MAP_SCALE DIALOG  0, 0, 136, 168
+STYLE DS_FIXEDSYS | WS_CHILD
+BEGIN
+    EDITTEXT        IDC_EDIT_X,36,0,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Y,103,0,32,12,ES_AUTOHSCROLL
+    CTEXT           "X Масштаб",IDC_STATIC_X,0,1,36,11,SS_CENTERIMAGE
+    CTEXT           "Y Масштаб",IDC_STATIC_Y,67,0,36,12,SS_CENTERIMAGE
+    CONTROL         "List1",IDC_LIST_OBJECT,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,1,13,133,154
+END
+
+IDD_COLOR_OPTIONS DIALOG  0, 0, 274, 170
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Цвета"
+BEGIN
+    LTEXT           "Цвета мастера",IDC_STATIC,6,7,74,12
+    LTEXT           "Цвета групп точек",IDC_STATIC,90,7,76,12
+    CONTROL         "List3",IDC_LIST_MASTER,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,6,19,74,144
+    CONTROL         "List4",IDC_LIST_POINT,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,90,19,76,144
+    LTEXT           "Цвет точек дополнения",IDC_STATIC_ANCHOR_COLOR,171,19,
+                    96,11
+    LTEXT           "Цвет точек (карта)",IDC_STATIC_MAPANCHOR_COLOR,171,36,
+                    96,11
+    LTEXT           "Цвет опорных точек",IDC_STATIC_REF_COLOR,171,53,96,11
+    LTEXT           "Цвет рамки размеров ",IDC_STATIC_EXTENT_COLOR,171,87,96,
+                    11
+    LTEXT           "Цвет номера точки",IDC_STATIC_COLOR_POINTNUMBER,171,70,
+                    96,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        VERTGUIDE, 13
+        VERTGUIDE, 83
+        VERTGUIDE, 145
+        VERTGUIDE, 179
+        VERTGUIDE, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+        HORZGUIDE, 21
+        HORZGUIDE, 35
+        HORZGUIDE, 50
+        HORZGUIDE, 52
+        HORZGUIDE, 68
+        HORZGUIDE, 70
+        HORZGUIDE, 84
+    END
+
+    IDD_ANCHOR, DIALOG
+    BEGIN
+        VERTGUIDE, 36
+        VERTGUIDE, 40
+        VERTGUIDE, 72
+        VERTGUIDE, 76
+        HORZGUIDE, 10
+        HORZGUIDE, 22
+        HORZGUIDE, 26
+        HORZGUIDE, 41
+    END
+
+    IDD_ID, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_CREATE_AREA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        VERTGUIDE, 71
+        VERTGUIDE, 82
+        VERTGUIDE, 119
+        VERTGUIDE, 130
+        VERTGUIDE, 146
+        VERTGUIDE, 194
+        HORZGUIDE, 20
+        HORZGUIDE, 35
+        HORZGUIDE, 45
+        HORZGUIDE, 60
+        HORZGUIDE, 75
+        HORZGUIDE, 90
+        HORZGUIDE, 100
+        HORZGUIDE, 115
+    END
+
+    IDD_LOADID, DIALOG
+    BEGIN
+        TOPMARGIN, 4
+    END
+
+    IDD_MAP_SCALE, DIALOG
+    BEGIN
+        VERTGUIDE, 32
+        VERTGUIDE, 36
+        VERTGUIDE, 67
+        VERTGUIDE, 71
+        VERTGUIDE, 103
+        VERTGUIDE, 106
+        HORZGUIDE, 12
+        HORZGUIDE, 13
+    END
+
+    IDD_COLOR_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 267
+        VERTGUIDE, 80
+        VERTGUIDE, 90
+        VERTGUIDE, 166
+        VERTGUIDE, 171
+        VERTGUIDE, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+        HORZGUIDE, 19
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\VVMapEditor.ico"
+IDR_VVMAPETYPE          ICON                    "res\\VVMapEditorDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_F7,          ID_COR_COMPILE,         VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_PAUSE,       ID_COR_STOP,            VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "VVMapEditor\n\nVVMapE\nVVMapEditor files(*.vme)\n.vme\nVVMapEditor.Document\nVVMapE Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "VVMapEditor"
+    AFX_IDS_IDLEMESSAGE     "Готов"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Создать новый документ\nНовый"
+    ID_FILE_OPEN            "Открыть существующий документ\nОткрыть"
+    ID_FILE_CLOSE           "Закрыть текущий документ\nЗакрыть"
+    ID_FILE_SAVE            "Сохранить текущий документ\nСохранить"
+    ID_FILE_SAVE_AS         "Сохранить текущий документпод новым именем\nСохранить как..."
+    ID_FILE_PAGE_SETUP      "Изменить опции печати\nНастройки страницы"
+    ID_FILE_PRINT_SETUP     "Изменить принтер и опции печати\nНастройки печати"
+    ID_FILE_PRINT           "Напечатать текущий документ\nПечать"
+    ID_FILE_PRINT_PREVIEW   "Отобразить превью\nПревью печати"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Показать название приложения и текущие версии компонент\nО программе"
+    ID_APP_EXIT             "Выйти из программы с предложением сохранения работы\nВыйти"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Переключиться на следующий элемент окна\nСледующий элемент"
+    ID_PREV_PANE            "Переключиться на предыдущий элемент окна\nПредыдущий элемент"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Разбить активное окно на составные части\nРазбить"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Стереть выделенное\nСтереть"
+    ID_EDIT_CLEAR_ALL       "Стереть все\nСтереть все"
+    ID_EDIT_COPY            "Скопировать выделенное в Clipvoard\nСкопировать"
+    ID_EDIT_CUT             "Вырезать выделенное в Clipboard\nВырезать"
+    ID_EDIT_FIND            "Найти указанный текст\nНайти"
+    ID_EDIT_PASTE           "Вставить содержимое Clipboard\nВставить"
+    ID_EDIT_REPEAT          "Повторить последнее действие\nПовторить"
+    ID_EDIT_REPLACE         "Заменить указанный текст на другой\nЗамена"
+    ID_EDIT_SELECT_ALL      "Выделить документ целиком\nВыделить все"
+    ID_EDIT_UNDO            "Отменить последнее действие\nUndo"
+    ID_EDIT_REDO            "Повторить ранее отмененное последнее действие\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Вкл/Выкл панель инструментов\nПанель инструментов"
+    ID_VIEW_STATUS_BAR      "Вкл/Выкл панель статуса\nПанель статуса"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Изменить размер окна"
+    AFX_IDS_SCMOVE          "Изменить положение окна"
+    AFX_IDS_SCMINIMIZE      "Свернуть окно"
+    AFX_IDS_SCMAXIMIZE      "Развернуть окно"
+    AFX_IDS_SCNEXTWINDOW    "Переключиться на следующее окно"
+    AFX_IDS_SCPREVWINDOW    "Переключиться на предыдущее окно"
+    AFX_IDS_SCCLOSE         "Закрыть текущее окно с предложением сохраниться"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Восстановить окно"
+    AFX_IDS_SCTASKLIST      "Включить лист заданий"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Закрыть окно превью\nЗакрыть превью"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_EXC_INVALID_IMAGE_FILE "Некорректный файл изображения"
+    IDS_FILTER_IMAGE        "BMP Image(*.bmp)|*.bmp|JPEG Image(*.jpg)|*.jpg;*.jpeg||"
+    IDS_FILTER_VIDEO        "Video file(*.avi)|*.avi||"
+    IDS_ERR_WRONGID         "Два или более ID совпадают"
+    IDS_FILTER_POLYGON      "Map polygon file(*.mpf)|*.mpf||"
+    IDS_REG_DB              "Software\\ElVEES\\Common"
+    IDS_REG_DB_PARAM        "DbInitString"
+    IDS_EXC_VIDEO_SERVER    "Не смогу связаться с сервером для этого ID"
+    IDS_EXC_VIDEO_IMAGE     "Невозможно получить изображение с сервера"
+    ID_CB_ALLOW_DOCKING     "Включить фиксацию окон"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_COMPILE_PROGRESS     "Компилировать"
+    ID_MAP_COORD            "Карта"
+    ID_ABSOLUTE_COORD       "Абсолютные координаты"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_CB_CLOSE             "Закрыть"
+    IDS_MENU_NEW            "Новый"
+    IDS_FILTER_NONE         "Показывать все существующие точки"
+    IDS_FILTER_WEAK         "Показать существующие точки только на видимых окнах"
+    IDS_FILTER_STRONG       "Показать существующие точки только на двух или более видимых окнах"
+    IDS_NO_IMAGE            "Нет изображения"
+    IDS_ANCHOR_NUMBER       "#"
+    IDS_ANCHOR_X            "X/Ро"
+    IDS_ANCHOR_Y            "Y/Фи"
+    IDS_ANCHOR_Z            "Z/Пси"
+    IDS_ANCHOR_RELATIVE     "Отн"
+    IDS_ANCHOR_STATIC_X     "X"
+    IDS_ANCHOR_STATIC_Y     "Y"
+    IDS_ANCHOR_STATIC_Z     "Z"
+    IDS_ANCHOR_STATIC_RO    "Ро"
+    IDS_ANCHOR_STATIC_PSI   "Пси"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_MAP             "Редактировать карту\nРедактировать карту"
+    ID_EDIT_POINTS          "Редактировать точки соответствия\nРедактировать точки"
+    ID_EDIT_EXTENTS         "Редактировать размеры\nРедактировать размеры"
+    ID_VIEW_POINTS          "Вкл/выкл точки\nТочки"
+    ID_VIEW_EXTENTS         "Вкл/Выкл размеры\nУстановить размеры"
+    ID_VIEW_POLYGONS        "Вкл/Выкл зоны обзора\nЗоны обзора"
+    ID_VIEW_GETXY_POINTS    "Вкл/выкл точки соответствия\nТочки соответствия"
+    ID_COR_CREATE           "Создать соответствие карты и видео\nСоздать соответствие"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_COR_COMPILE          "Скомпилировать соответствие\nКомпилировать(F7)"
+    ID_COR_MERGE_2MASTERS   "Склеить две камеры\nСклеить"
+    ID_COR_STOP             "Остановить компиляцию соответствия\nСтоп(Ctrl+Break)"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_HEIGHTS         "Вкл/Выкл высоты таблиц размеров\nВысоты"
+    ID_EDIT_MAP_ORIGIN      "Редактировать расположение карты\nРедактировать расположение карты"
+    ID_EDIT_IZ              "Редактировать зоны невидимости\nРедактировать зоны невидимости"
+    ID_VIEW_IZ              "Вкл/Выкл зоны невидимости\nЗоны невидимости"
+    ID_EDIT_SP              "Редактировать вспом. точки и точки отсчета\nРедактировать вспом. точки и точки отсчета"
+    ID_EDIT_RP              "Смотреть карту или зону видимости\nСмотреть карту или зону видимости"
+    ID_EDIT_OPTIONS         "Редактировать настройки\nРедактировать настройки"
+    ID_VIEW_POINT_NUMBER    "Вкл/Выкл номера точек\nНомера точек"
+    ID_EDIT_INTERFACE_OPTIONS 
+                            "Вызвать диалог опций  VVMInterface\nВызвать диалог опций"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_SCALECOMBO           "Выбрать масштаб карты\nМасштабировать карту"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ANCHOR_STATIC_PHI   "Phi"
+    IDS_ADD_ITEMS           "Добавьте больше элементов"
+    IDS_MAP                 "Карта"
+    IDS_FMT_EXTENT          "Размеры %d"
+    IDS_NEW_DISTANCE        "Новое расстояние"
+    IDS_NEW_REFERENCE_POINT "Новая точка отсчета"
+    IDS_FMT_GROUP           "Группа %d"
+    IDS_REFERENCE_POINT     "Точка отсчета"
+    IDS_SUPPORT_POINTS      "Вспомогательные точки"
+    IDS_REFERENCE_POINTS    "Точки отсчета"
+    IDS_COLUMN_POINTS       "Точки"
+    IDS_COLUMN_DISTANCES    "Расстояния"
+    IDS_FMT_ID              "ID=%d"
+    IDS_PAUSE               "Пауза"
+    IDS_VMT_FILTER          "Extent table file(*.vmt)|*.vmt||"
+    IDS_NO                  "Нет"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_YES                 "Да"
+    IDS_FMT_MERGE_AREA_SIZE "Размер зоны пересечения %dx%d"
+    IDS_FMT_MERGE           "Слить %d"
+    IDS_COLUMN_FROM         "От"
+    IDS_COLUMN_TO           "До"
+    IDS_COLUMN_QUALITY      "Качество"
+    IDS_INVALID_DATA_SOURCE "Неверное имя источника данных"
+    IDS_DB_NOT_CONNECTED    "Не могу связаться с БД"
+    IDS_TABLE_NOT_CONNECTED "Не могу открыть файл или таблицы"
+    IDS_POINTS              "Точки"
+    IDS_EXTENTS             "Размеры"
+    IDS_DIFF_IDS            "ID должны быть разными"
+    IDS_CUSTOM_OPTIONS      "Выборочный"
+    IDS_OPTIONS             "Опции"
+    IDS_TT_CROSS_EXTENT     "Размеры указателя соответствия между картой и камерами"
+    IDS_TT_CROSS_THICKNESS  "Толщина указателя соответствия между картой и камерами"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MASTER              "Мастер"
+    IDS_COLOR               "Цвет"
+    IDS_GROUP               "Группа"
+    IDS_DB_CONNECTION       "Ошибка при соединении с БД"
+    IDS_NO_DATA             "Нет данных в БД"
+    IDS_DB_SAVE             "Ошибка при сохранении в БД"
+END
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ANCHOR_ON_MAP       BITMAP                  "res\\bmp00003.bmp"
+IDR_MENU                BITMAP                  "res\\toolbar1.bmp"
+IDR_TOOLBAR1            BITMAP                  "res\\bmp00001.bmp"
+IDB_CONTROL_POINT       BITMAP                  "res\\bitmap1.bmp"
+IDB_PAUSE               BITMAP                  "res\\bitmap2.bmp"
+IDB_CONTROL_ANCHOR      BITMAP                  "res\\bmp00002.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_GETXY               BITMAP                  "res\\GetXY.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "../resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#include ""VVMapEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CROSS2              CURSOR                  "res\\cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MASTER MENU 
+BEGIN
+    POPUP "Master"
+    BEGIN
+        POPUP "Background"
+        BEGIN
+            MENUITEM "Image file...",               ID_MASTER_IMAGE
+            MENUITEM "Video file...",               ID_MASTER_VIDEO
+            MENUITEM "Camera",                      ID_MASTER_CAMERA
+            MENUITEM "Empty",                       ID_MASTER_EMTPY
+        END
+        MENUITEM "Back",                        ID_MASTER_ALLBG, GRAYED
+        POPUP "Table"
+        BEGIN
+            MENUITEM "Save",                        ID_MASTER_SAVE_TABLE
+            MENUITEM "Open",                        ID_MASTER_OPEN_TABLE
+        END
+        MENUITEM "Set ID...",                   ID_MASTER_SETID
+        MENUITEM "Toggle SRS",                  ID_MASTER_SRS
+    END
+    POPUP "Map"
+    BEGIN
+        MENUITEM "Image",                       ID_MAP_IMAGE
+        MENUITEM "Export",                      ID_MAP_EXPORT
+    END
+END
+
+IDR_POINTS MENU 
+BEGIN
+    POPUP "Groups"
+    BEGIN
+        MENUITEM "Delete",                      ID_GROUP_DELETE
+    END
+    POPUP "Points"
+    BEGIN
+        MENUITEM "Delete",                      ID_POINTS_DELETE
+    END
+END
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "Open From Database",          ID_FILE_OPEN_DB
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "Save To Database",            32832
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo",                       ID_EDIT_UNDO
+        MENUITEM "Redo",                        ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Options...",                  ID_EDIT_OPTIONS
+        MENUITEM "VVMInterface Options...",     ID_EDIT_INTERFACE_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Map",                         ID_EDIT_MAP
+        MENUITEM "Points",                      ID_EDIT_POINTS
+        MENUITEM "Extents",                     ID_EDIT_EXTENTS
+        MENUITEM "Map Origin",                  ID_EDIT_MAP_ORIGIN
+        MENUITEM "Invisible Zones",             ID_EDIT_IZ
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Points",                      ID_VIEW_POINTS
+        MENUITEM "Extents",                     ID_VIEW_EXTENTS
+        MENUITEM "Polygons",                    ID_VIEW_POLYGONS
+        MENUITEM "GetXY Points",                ID_VIEW_GETXY_POINTS
+        MENUITEM "Heights",                     ID_VIEW_HEIGHTS
+        MENUITEM "Invisible Zones",             ID_VIEW_IZ
+        MENUITEM "Point Numbers",               ID_VIEW_POINT_NUMBER
+    END
+    POPUP "Correspondence"
+    BEGIN
+        MENUITEM "Create...",                   ID_COR_CREATE
+        MENUITEM "Compile",                     ID_COR_COMPILE
+        MENUITEM "Merge 2 Masters",             ID_COR_MERGE_2MASTERS
+        POPUP "Create Panorama"
+        BEGIN
+            MENUITEM "No Masters",                  ID_MERGE
+        END
+        POPUP "Delete Merge"
+        BEGIN
+            MENUITEM "No Masters",                  ID_MERGE_DELETE
+        END
+        POPUP "Extent Map"
+        BEGIN
+            MENUITEM "No Masters",                  ID_EXTENT_MAP
+        END
+        MENUITEM "Stop\tCtrl+Break",            ID_COR_STOP
+        MENUITEM "Map Panorama",                ID_COR_MAP_PANORAMA
+    END
+    POPUP "Windows"
+    BEGIN
+        POPUP "Camera"
+        BEGIN
+            MENUITEM "No Master",                   ID_MASTER_WINDOW
+        END
+        MENUITEM "Points",                      ID_WINDOW_POINTS
+        MENUITEM "Quality",                     ID_WINDOW_QUALITY
+        MENUITEM "Add Window",                  ID_VIEW_ADDWINDOW
+        MENUITEM "Close all",                   ID_WINDOW_CLOSE_ALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About VVMapEditor...",       ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MENU TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_APP_ABOUT
+    BUTTON      ID_WINDOW_POINTS
+    BUTTON      ID_APP_EXIT
+END
+
+IDR_TOOLBAR1 TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_CB_ALLOW_DOCKING
+END
+
+IDR_MAINFRAME TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_SCALECOMBO
+    BUTTON      ID_EDIT_UNDO
+    BUTTON      ID_EDIT_REDO
+    SEPARATOR
+    BUTTON      ID_EDIT_MAP
+    BUTTON      ID_EDIT_POINTS
+    BUTTON      ID_EDIT_EXTENTS
+    BUTTON      ID_EDIT_MAP_ORIGIN
+    BUTTON      ID_EDIT_IZ
+    BUTTON      ID_EDIT_SP
+    BUTTON      ID_EDIT_RP
+    SEPARATOR
+    BUTTON      ID_VIEW_POINTS
+    BUTTON      ID_VIEW_POINT_NUMBER
+    BUTTON      ID_VIEW_EXTENTS
+    BUTTON      ID_VIEW_POLYGONS
+    BUTTON      ID_VIEW_GETXY_POINTS
+    BUTTON      ID_VIEW_HEIGHTS
+    BUTTON      ID_VIEW_IZ
+    SEPARATOR
+    BUTTON      ID_COR_CREATE
+    BUTTON      ID_COR_COMPILE
+    BUTTON      ID_COR_MERGE_2MASTERS
+    BUTTON      ID_COR_STOP
+    BUTTON      ID_EDIT_INTERFACE_OPTIONS
+    SEPARATOR
+    BUTTON      ID_VIDEO_PLAY
+    BUTTON      ID_VIDEO_STOP
+    BUTTON      ID_VIDEO_PAUSE
+    BUTTON      ID_VIDEO_RECORD
+    BUTTON      ID_VIDEO_PROPERTY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS DIALOG  0, 0, 240, 159
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Custom"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Spin1",IDC_SPIN_MRU,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ALIGNRIGHT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,112,7,
+                    11,14
+    EDITTEXT        IDC_EDIT_MRU,83,7,28,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Number of recent files",IDC_STATIC,7,9,72,8
+    GROUPBOX        "Point filter",IDC_STATIC,7,30,56,53
+    CONTROL         "None",IDC_FILTER_NONE,"Button",BS_AUTORADIOBUTTON,13,42,
+                    33,10
+    CONTROL         "Weak",IDC_FILTER_WEAK,"Button",BS_AUTORADIOBUTTON,13,55,
+                    35,10
+    CONTROL         "Strong",IDC_FILTER_STRONG,"Button",BS_AUTORADIOBUTTON,
+                    13,68,37,10
+    LTEXT           "Static",IDC_STATIC_CROSS,83,35,62,49,WS_BORDER
+    EDITTEXT        IDC_EDIT_EXTENT,145,35,34,15,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_THICKNESS,145,70,34,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "Spin1",IDC_SPIN_EXTENT,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS,179,35,12,15
+    CONTROL         "Spin2",IDC_SPIN_THICKNESS,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS,179,70,12,14
+    LTEXT           "Cross extent",IDC_STATIC,145,21,46,14
+    LTEXT           "Cross thickness",IDC_STATIC,145,52,54,18
+END
+
+IDD_ANCHOR DIALOG  0, 0, 156, 229
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_ID DIALOGEX 0, 0, 177, 47
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "New ID"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,120,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,120,25,50,14
+    EDITTEXT        IDC_EDIT1,24,14,78,17,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+END
+
+IDD_CREATE_AREA DIALOGEX 0, 0, 202, 159
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Create Correspondence"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,146,121,48,14
+    PUSHBUTTON      "Cancel",IDCANCEL,146,138,48,14
+    LISTBOX         IDC_ID_ALL,7,20,64,95,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_ID_SELECT,130,20,64,95,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_ADD,82,20,37,15
+    PUSHBUTTON      ">>",IDC_ADD_ALL,82,45,37,15
+    PUSHBUTTON      "<",IDC_REMOVE,82,75,37,15
+    PUSHBUTTON      "<<",IDC_REMOVE_ALL,82,100,37,15
+    CTEXT           "Available ",IDC_STATIC,7,3,64,17,SS_CENTERIMAGE
+    CTEXT           "Current",IDC_STATIC,130,2,64,8,SS_CENTERIMAGE
+    CTEXT           "correspondence",IDC_STATIC,130,10,64,8,SS_CENTERIMAGE
+END
+
+IDD_SHORT DIALOG  0, 0, 132, 22
+STYLE DS_SETFONT | DS_3DLOOK | DS_FIXEDSYS | DS_CONTROL | WS_CHILD | 
+    WS_CLIPSIBLINGS
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Save short info",IDC_SHORT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,54,7,65,8
+END
+
+IDD_MERGE DIALOGEX 0, 0, 225, 47
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,168,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,168,24,50,14
+    COMBOBOX        IDC_LEFT,33,17,34,50,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RIGHT,120,18,34,47,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Left",IDC_STATIC,7,18,17,12
+    LTEXT           "Right",IDC_STATIC,98,18,22,12
+END
+
+IDD_LOADID DIALOGEX 0, 0, 136, 127
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Set Master ID"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,71,106,50,14
+    LISTBOX         IDC_LIST2,7,17,112,79,LBS_OWNERDRAWVARIABLE | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "ID from file",IDC_STATIC,7,4,56,10
+    LTEXT           "Window ID",IDC_STATIC,63,4,58,10
+END
+
+IDD_SETID DIALOGEX 0, 0, 128, 127
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Set Master ID"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,69,106,52,14
+    LISTBOX         IDC_LIST2,7,17,112,79,LBS_OWNERDRAWVARIABLE | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Current ID",IDC_STATIC,7,4,56,10
+    LTEXT           "New ID",IDC_STATIC,63,4,58,10
+    PUSHBUTTON      "Cancel",IDCANCEL,7,106,52,14
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 250, 70
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About VVMapEditor"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "VVMapEditor\t\t1.0.0rc",IDC_VER_EDITOR,36,20,119,8,
+                    SS_NOPREFIX
+    LTEXT           "ElVEES (C) 2004",IDC_STATIC,37,6,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "VVMapInterface Version",IDC_VER_INT,36,33,119,8,
+                    SS_NOPREFIX
+END
+
+IDD_VIDEOCOMPRESSION DIALOGEX 0, 0, 350, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CONTEXTHELP | WS_POPUP | 
+    WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTEXTHELP
+CAPTION "Select video compression"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,241,151,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,293,151,50,14
+    LISTBOX         IDC_COMP_LIST,7,7,180,102,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Use target &data rate of",IDC_USE_DATARATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,136,87,10
+    EDITTEXT        IDC_DATARATE,97,134,46,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "kilobytes/second",IDC_STATIC_DATARATE,148,138,55,8
+    CONTROL         "Force &keyframes every",IDC_USE_KEYFRAMES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,153,87,10
+    EDITTEXT        IDC_KEYRATE,97,152,46,13,ES_AUTOHSCROLL
+    LTEXT           "frames",IDC_STATIC_KEYFRAMES,148,154,22,8
+    GROUPBOX        "Video codec information",IDC_STATIC,193,7,150,102
+    LTEXT           "Delta frames",IDC_STATIC,197,19,40,8
+    LTEXT           "FOURCC code",IDC_STATIC,197,29,48,8
+    LTEXT           "Driver name",IDC_STATIC,197,39,39,8
+    LTEXT           "Format restrictions:",IDC_STATIC,198,62,60,8
+    LISTBOX         IDC_SIZE_RESTRICTIONS,198,70,140,35,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Configure",IDC_CONFIGURE,241,114,50,14
+    PUSHBUTTON      "&About",IDC_ABOUT,293,114,50,14
+    LTEXT           "",IDC_STATIC_DELTA,275,19,63,8
+    LTEXT           "",IDC_STATIC_FOURCC,275,29,63,8
+    LTEXT           "",IDC_STATIC_DRIVER,275,39,63,8
+    LTEXT           "&Quality",IDC_STATIC_QUALITY_LABEL,7,114,22,14,
+                    SS_CENTERIMAGE
+    CONTROL         "Slider1",IDC_QUALITY_SLIDER,"msctls_trackbar32",
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,38,114,130,14
+    EDITTEXT        IDC_EDIT_QUALITY,171,115,27,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_NUMBER
+END
+
+IDD_MAP_SCALE DIALOG  0, 0, 136, 168
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_X,36,0,31,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Y,103,0,32,12,ES_AUTOHSCROLL
+    CTEXT           "X Scale",IDC_STATIC_X,0,1,32,11,SS_CENTERIMAGE
+    CTEXT           "Y Scale",IDC_STATIC_Y,67,0,32,12,SS_CENTERIMAGE
+    CONTROL         "List1",IDC_LIST_OBJECT,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,1,13,133,154
+END
+
+IDD_COLOR_OPTIONS DIALOG  0, 0, 274, 170
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Colors"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Master colors",IDC_STATIC,6,7,74,12
+    LTEXT           "Point group colors",IDC_STATIC,90,7,76,12
+    CONTROL         "List3",IDC_LIST_MASTER,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,6,19,74,144
+    CONTROL         "List4",IDC_LIST_POINT,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDRAWFIXED | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,90,19,76,144
+    LTEXT           "Support point color",IDC_STATIC_ANCHOR_COLOR,171,19,96,
+                    11
+    LTEXT           "Map support point color",IDC_STATIC_MAPANCHOR_COLOR,171,
+                    36,96,11
+    LTEXT           "Reference point color",IDC_STATIC_REF_COLOR,171,53,96,
+                    11
+    LTEXT           "Extent color",IDC_STATIC_EXTENT_COLOR,171,87,96,11
+    LTEXT           "Point number color",IDC_STATIC_COLOR_POINTNUMBER,171,70,
+                    96,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        VERTGUIDE, 13
+        VERTGUIDE, 83
+        VERTGUIDE, 145
+        VERTGUIDE, 179
+        VERTGUIDE, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+        HORZGUIDE, 21
+        HORZGUIDE, 35
+        HORZGUIDE, 50
+        HORZGUIDE, 52
+        HORZGUIDE, 68
+        HORZGUIDE, 70
+        HORZGUIDE, 84
+    END
+
+    IDD_ID, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 39
+    END
+
+    IDD_CREATE_AREA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        VERTGUIDE, 71
+        VERTGUIDE, 82
+        VERTGUIDE, 119
+        VERTGUIDE, 130
+        VERTGUIDE, 146
+        VERTGUIDE, 194
+        HORZGUIDE, 20
+        HORZGUIDE, 35
+        HORZGUIDE, 45
+        HORZGUIDE, 60
+        HORZGUIDE, 75
+        HORZGUIDE, 90
+        HORZGUIDE, 100
+        HORZGUIDE, 115
+    END
+
+    IDD_LOADID, DIALOG
+    BEGIN
+        TOPMARGIN, 4
+    END
+
+    IDD_MAP_SCALE, DIALOG
+    BEGIN
+        VERTGUIDE, 32
+        VERTGUIDE, 36
+        VERTGUIDE, 67
+        VERTGUIDE, 71
+        VERTGUIDE, 103
+        VERTGUIDE, 106
+        HORZGUIDE, 12
+        HORZGUIDE, 13
+    END
+
+    IDD_COLOR_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 267
+        VERTGUIDE, 80
+        VERTGUIDE, 90
+        VERTGUIDE, 166
+        VERTGUIDE, 171
+        VERTGUIDE, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+        HORZGUIDE, 19
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\VVMapEditor.ico"
+IDR_VVMAPETYPE          ICON                    "res\\VVMapEditorDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_F4,          ID_WINDOW_CLOSE_ALL,    VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_F7,          ID_COR_COMPILE,         VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_PAUSE,       ID_COR_STOP,            VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_EDIT_REDO,           VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,5,0,913
+ PRODUCTVERSION 1,5,0,913
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "ElVEES"
+            VALUE "FileDescription", "Video-to-Video-to-Map Correspondence Editor"
+            VALUE "FileVersion", "1, 5, 0, 913"
+            VALUE "InternalName", "VVMapEditor"
+            VALUE "LegalCopyright", "Copyright (C) ElVEES, 2005"
+            VALUE "OriginalFilename", "VVMapEditor.exe"
+            VALUE "ProductName", "VVMapEditor"
+            VALUE "ProductVersion", "1, 5, 0, 913"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "VVMapEditor\n\nVVMapE\nVVMapEditor files(*.vme)\n.vme\nVVMapEditor.Document\nVVMapE Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "VVMapEditor"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_EXC_INVALID_IMAGE_FILE "Invalid image file"
+    IDS_FILTER_IMAGE        "BMP Image(*.bmp)|*.bmp|JPEG Image(*.jpg)|*.jpg;*.jpeg||"
+    IDS_FILTER_VIDEO        "Video file(*.avi)|*.avi||"
+    IDS_ERR_WRONGID         "Two or more ID have equal values"
+    IDS_FILTER_POLYGON      "Map polygon file(*.mpf)|*.mpf||"
+    IDS_REG_DB              "Software\\ElVEES\\Common"
+    IDS_REG_DB_PARAM        "DbInitString"
+    IDS_EXC_VIDEO_SERVER    "Can't connect to server with this id"
+    IDS_EXC_VIDEO_IMAGE     "Can't get image from server"
+    ID_CB_ALLOW_DOCKING     "Allow docking"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_COMPILE_PROGRESS     "Compile"
+    ID_MAP_COORD            "Map"
+    ID_ABSOLUTE_COORD       "Ablsolute"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_CB_CLOSE             "Close"
+    IDS_MENU_NEW            "New"
+    IDS_FILTER_NONE         "Show all existing points"
+    IDS_FILTER_WEAK         "Show points existing only on visible windows"
+    IDS_FILTER_STRONG       "Show points existing only on two or more visible windows"
+    IDS_NO_IMAGE            "No image"
+    IDS_ANCHOR_NUMBER       "#"
+    IDS_ANCHOR_X            "X/Ro"
+    IDS_ANCHOR_Y            "Y/Phi"
+    IDS_ANCHOR_Z            "Z/Psi"
+    IDS_ANCHOR_RELATIVE     "Rel"
+    IDS_ANCHOR_STATIC_X     "X"
+    IDS_ANCHOR_STATIC_Y     "Y"
+    IDS_ANCHOR_STATIC_Z     "Z"
+    IDS_ANCHOR_STATIC_RO    "Ro"
+    IDS_ANCHOR_STATIC_PSI   "Psi"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_MAP             "Edit map\nEdit map"
+    ID_EDIT_POINTS          "Edit correspondent points\nEdit points"
+    ID_EDIT_EXTENTS         "Edit extents\nEdit extents"
+    ID_VIEW_POINTS          "Show or hide points\nToggle points"
+    ID_VIEW_EXTENTS         "Show or hide extents\nToggle extents"
+    ID_VIEW_POLYGONS        "Show or hide polygons\nToggle polygons"
+    ID_VIEW_GETXY_POINTS    "Show or hide correspondent points\nToggle correspondent points"
+    ID_COR_CREATE           "Create video-to-video-to-map correspondence\nCreate correspondence"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_COR_COMPILE          "Compile correspondence\nCompile(F7)"
+    ID_COR_MERGE_2MASTERS   "Merge two cameras\nMerge"
+    ID_COR_STOP             "Stop compile correspondence\nStop(Ctrl+Break)"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_HEIGHTS         "Show or hide heights of extent tables\nToggle heights"
+    ID_EDIT_MAP_ORIGIN      "Edit map origin\nEdit map origin"
+    ID_EDIT_IZ              "Edit invisible zones\nEdit invisible zones"
+    ID_VIEW_IZ              "Show or hide invisible zones\nToggle invisible zones"
+    ID_EDIT_SP              "Edit support and reference points\nEdit support and reference points"
+    ID_EDIT_RP              "View map or visible area\nToggle map or visible area"
+    ID_EDIT_OPTIONS         "Edit options\nEdit options"
+    ID_VIEW_POINT_NUMBER    "Show or hide point numbers\nToggle point numbers"
+    ID_EDIT_INTERFACE_OPTIONS 
+                            "Invoke VVMInterface option dialog\nInvoke option dialog"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_SCALECOMBO           "Choose map scale\nScale map "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ANCHOR_STATIC_PHI   "Phi"
+    IDS_ADD_ITEMS           "Add more items"
+    IDS_MAP                 "Map"
+    IDS_FMT_EXTENT          "Extent %d"
+    IDS_NEW_DISTANCE        "New distance"
+    IDS_NEW_REFERENCE_POINT "New ref. point"
+    IDS_FMT_GROUP           "Group %d"
+    IDS_REFERENCE_POINT     "Ref. point"
+    IDS_SUPPORT_POINTS      "Support points"
+    IDS_REFERENCE_POINTS    "Reference points"
+    IDS_COLUMN_POINTS       "Points"
+    IDS_COLUMN_DISTANCES    "Distances"
+    IDS_FMT_ID              "ID=%d"
+    IDS_PAUSE               "Pause"
+    IDS_VMT_FILTER          "Extent table file(*.vmt)|*.vmt||"
+    IDS_NO                  "No"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_YES                 "Yes"
+    IDS_FMT_MERGE_AREA_SIZE "Merge area size is %dx%d"
+    IDS_FMT_MERGE           "Merge %d"
+    IDS_COLUMN_FROM         "From"
+    IDS_COLUMN_TO           "To"
+    IDS_COLUMN_QUALITY      "Quality"
+    IDS_INVALID_DATA_SOURCE "Data source name is invalid"
+    IDS_DB_NOT_CONNECTED    "Can't connect to the database"
+    IDS_TABLE_NOT_CONNECTED "Can't open one of  tables"
+    IDS_POINTS              "Points"
+    IDS_EXTENTS             "Extents"
+    IDS_DIFF_IDS            "IDs must be different"
+    IDS_CUSTOM_OPTIONS      "Custom"
+    IDS_OPTIONS             "Options"
+    IDS_TT_CROSS_EXTENT     "Sizes of the crosshair showing correspondces between cameras and map"
+    IDS_TT_CROSS_THICKNESS  "Thickness of the crosshair showing correspondences between cameras and map"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MASTER              "Master"
+    IDS_COLOR               "Color"
+    IDS_GROUP               "Group"
+    IDS_DB_CONNECTION       "Database connection failed"
+    IDS_NO_DATA             "No data in the database"
+    IDS_DB_SAVE             "Failed to save to the database"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#include "VVMapEditor.rc2"  // non-Microsoft Visual C++ edited resources
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
