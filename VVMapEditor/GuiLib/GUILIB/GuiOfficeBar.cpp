@@ -509,7 +509,7 @@ void CGuiOfficeBar::OnNcMouseMove(UINT nHitTest, CPoint point)
 	CGuiControlBar::OnNcMouseMove(nHitTest, point);
 }
 
-UINT CGuiOfficeBar::OnNcHitTest(CPoint point)
+LRESULT CGuiOfficeBar::OnNcHitTest(CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 	CRect rcWindow;

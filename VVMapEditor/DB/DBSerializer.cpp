@@ -29,6 +29,8 @@ DBSerializer::~DBSerializer()
 {
 }
 
+#ifdef ORWELL_DB
+
 void	DBSerializer::SaveFile( const std::vector<BYTE>& Data)
 try
 {
@@ -96,18 +98,6 @@ catch( DatabaseException )
 
 void	DBSerializer::Connect()
 {
-#if 0
-	TCHAR szBuf[1024];
-	DWORD dwSize = sizeof( szBuf );
-	DWORD dwType = REG_SZ;
-	DWORD res = SHGetValue( HKEY_LOCAL_MACHINE, _T("Software\\ElVEES\\Common"), _T("DbInitString"), &dwType, szBuf, &dwSize );
-	if( res != ERROR_SUCCESS  ) throw  DBConnectionException("Invalid connection string");
-	std::tstring sCS (szBuf);
-#if 1
-	sCS += _T(";User ID=OrwellSAdmin;Password=t*e_AVafrEzUtaTha2rEmUJE@ew#xaze"); 
-#endif
-	Open( sCS, false );
-#else
 	DWORD dwSize = 0;
 	long res = GetO2KDBString( NULL, &dwSize, true);
 	if(res != DBB_S_OK)
@@ -122,7 +112,6 @@ void	DBSerializer::Connect()
 	}
 	std::wstring sCS( Buf.begin(), Buf.end() );
 	Open( sCS, false );
-#endif
 }
 
 void	DBSerializer::GetCameraList( std::vector<int>& CameraArr ) 
@@ -157,3 +146,24 @@ catch( DatabaseException )
 {
 	CameraArr.clear();
 };
+
+#else
+
+void DBSerializer::Connect() {}
+
+void	DBSerializer::SaveFile(const std::vector<BYTE>& Data)
+{
+	throw DatabaseException("Not impelemented");
+}
+
+void	DBSerializer::LoadFile(std::vector<BYTE>& BinArr)
+{
+	throw DatabaseException("Not impelemented");
+}
+
+void	DBSerializer::GetCameraList(std::vector<int>& CameraArr)
+{
+	CameraArr = { 1, 2, 3, 4, 5 };
+}
+
+#endif

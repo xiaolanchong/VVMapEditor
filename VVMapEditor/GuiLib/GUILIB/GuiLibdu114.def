@@ -1,6 +1,6 @@
 ; GuiLibdu114.def : Declares the module parameters for the DLL.
 
-LIBRARY      "GuiLibdu114"
+;LIBRARY      "GuiLibdu114"
 DESCRIPTION  'GuiLibdu114 Windows Dynamic Link Library'
 
 EXPORTS

@@ -16,7 +16,7 @@ static char THIS_FILE[]=__FILE__;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-boost::shared_ptr<CImageList> CStateCache::s_ilState;
+std::shared_ptr<CImageList> CStateCache::s_ilState;
 
 const UINT c_nXSize = 16;
 const UINT c_nYSize = 16;
@@ -25,7 +25,7 @@ CStateCache::CStateCache() : m_bValid(false)
 {
 	if( ! s_ilState.get() )
 	{
-		s_ilState = boost::shared_ptr<CImageList>( new CImageList );
+		s_ilState = std::shared_ptr<CImageList>( new CImageList );
 		s_ilState->Create( IDB_GETXY , c_nXSize, 1, RGB(192,192,192) );
 	}
 }
@@ -35,7 +35,7 @@ CStateCache::CStateCache(	CPoint	point, long	err, CWnd*	pWnd) :
 {
 	CDC* pDC = pWnd->GetDC();
 
-	m_pOldBitmap = boost::shared_ptr<CBitmap>( new CBitmap );
+	m_pOldBitmap = std::shared_ptr<CBitmap>( new CBitmap );
 	m_pOldBitmap->CreateCompatibleBitmap( pDC, c_nXSize, c_nYSize );
 	CDC	 MemDC;
 	MemDC.CreateCompatibleDC(pDC);

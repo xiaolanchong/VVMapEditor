@@ -2,6 +2,7 @@
 //
 
 #include "stdafx.h"
+#include <iterator>
 #include "VVMapEditor.h"
 
 #include "VVMapEditorDoc.h"
@@ -302,7 +303,7 @@ bool	CMainFrame::CreateCameraWnd()
 			int nID = Cameras[i];
 			CString Name;
 			Name.Format( IDS_FMT_ID, nID );
-			boost::shared_ptr<CCameraBar> p ( new CCameraBar(nID, this) );
+			std::shared_ptr<CCameraBar> p ( new CCameraBar(nID, this) );
 			p->ShowWindow(FALSE);
 			p->EnableDocking(CBRS_ALIGN_ANY);
 			DockControlBar(p.get(), AFX_IDW_DOCKBAR_RIGHT);
@@ -981,7 +982,7 @@ void CMainFrame::OnMergeDynamic(UINT nID)
 
 		CString Name;
 		Name.Format( IDS_FMT_MERGE, pDoc->IndexToId(nIndex) );
-		boost::shared_ptr<CMergeBar> p ( new CMergeBar( this, Name, rc,  nIndex  ) );
+		std::shared_ptr<CMergeBar> p ( new CMergeBar( this, Name, rc,  nIndex  ) );
 
 		m_Merges.insert( std::make_pair( nIndex, p));
 			
@@ -1007,7 +1008,7 @@ void CMainFrame::OnExtentDynamic(UINT nID)
 	{
 		CString strName; //strName.Format(_T("Extent %d"), Id );
 		strName.Format( IDS_FMT_EXTENT, Id );
-		boost::shared_ptr<CExtentBar> p ( new CExtentBar( this,strName, nIndex  ) );
+		std::shared_ptr<CExtentBar> p ( new CExtentBar( this,strName, nIndex  ) );
 
 		m_ExtentWnds.insert( std::make_pair( nIndex, p));
 			
@@ -1177,7 +1178,7 @@ void	CMainFrame::Renumber(const std::vector< int >& Ids )
 			else
 			{
 				WndMap_t::iterator itr =  m_Windows.find( arr[i].second );
-				boost::shared_ptr<CCameraBar> p = itr->second;
+				std::shared_ptr<CCameraBar> p = itr->second;
 				m_Windows.erase(itr);
 				p->SetNumber( arr[i].first  );
 				m_Windows.insert( std::make_pair( arr[i].first, p ) );
@@ -1199,7 +1200,7 @@ void	CMainFrame::Renumber(const std::vector<int>& Current, const std::vector<int
 	for( int i =0 ; i < Current.size(); ++i)
 	{
 		WndMap_t::iterator itr =  m_Windows.find( Current[i] );
-		boost::shared_ptr<CCameraBar> p = itr->second;
+		std::shared_ptr<CCameraBar> p = itr->second;
 		EndMap.insert( std::make_pair( Need[i], p ) );
 
 		p->SetNumber( Need[i]  );
@@ -1236,7 +1237,7 @@ void	CMainFrame::SetMerged()
 		m_Windows[idLeft]->SendMessage(WM_NCPAINT);
 	}
 
-	for(  i = 0; i < num; ++i)
+	for(int i = 0; i < num; ++i)
 	{
 		for( int j = 0; j < num; ++j)
 		{
@@ -1287,7 +1288,7 @@ void CMainFrame::CreateFrame(int nID, bool bUpdate/*, bool bSet*/)
 {
 	CString Name;
 	Name.Format( _T("ID = %d"), nID );
-	boost::shared_ptr<CCameraBar> p ( new CCameraBar(nID, this) );			
+	std::shared_ptr<CCameraBar> p ( new CCameraBar(nID, this) );
 	ShowHideBar( p.get() );
 	p->EnableDocking(CBRS_ALIGN_ANY);
 	DockControlBar(p.get(), AFX_IDW_DOCKBAR_RIGHT);	
@@ -1385,7 +1386,7 @@ void CMainFrame::CreateUniteWndMenu(const std::vector<int >& Ids)
 //	m_wndToolBar.SetButtonDropDown( ID_VIEW_IZ, iImage,  m_menuIZView.GetSafeHmenu());
 
 	CVVMapEditorDoc* pDoc = (CVVMapEditorDoc*)GetActiveDocument();
-	for( i = 0; pDoc&&i < pDoc->m_Ids.size(); ++i )
+	for(size_t i = 0; pDoc&&i < pDoc->m_Ids.size(); ++i )
 	{
 		int z = pDoc->m_Ids[i];
 		Color cl = GetSettings().GetMasterColor( z );

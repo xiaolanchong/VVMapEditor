@@ -173,8 +173,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 			case HTLEFT:
 				m_pDockContext->m_rectFrameDragHorz= rcWin;
 				m_pDockContext->m_rectFrameDragHorz.left = cpt.x;
-				m_sizeMinFloating.cx = std::_cpp_max<int>(rcWin.right - cpt.x,32)-4 ;
-				m_sizeMinFloating.cy = std::_cpp_max<int>((rcWin.bottom -rcWin.top)-nGapGripper-5,32)+2 ;
+				m_sizeMinFloating.cx = std::max<int>(rcWin.right - cpt.x,32)-4 ;
+				m_sizeMinFloating.cy = std::max<int>((rcWin.bottom -rcWin.top)-nGapGripper-5,32)+2 ;
 
 				m_sizeMinFloating.cx = min( m_sizeMinFloating.cx, sizeMaxArea.cx );
 				m_sizeMinFloating.cy = min( m_sizeMinFloating.cy, sizeMaxArea.cy );
@@ -184,8 +184,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 			case HTTOP:
 				m_pDockContext->m_rectFrameDragHorz=rcWin;
 				m_pDockContext->m_rectFrameDragHorz.top = cpt.y;
-				m_sizeMinFloating.cx = std::_cpp_max<int>(rcWin.right-rcWin.left-2,32)-4 ;
-				m_sizeMinFloating.cy = std::_cpp_max<int>((rcWin.bottom -nGapGripper-cpt.y-3),32) ;
+				m_sizeMinFloating.cx = std::max<int>(rcWin.right-rcWin.left-2,32)-4 ;
+				m_sizeMinFloating.cy = std::max<int>((rcWin.bottom -nGapGripper-cpt.y-3),32) ;
 
 				m_sizeMinFloating.cx = min( m_sizeMinFloating.cx, sizeMaxArea.cx );
 				m_sizeMinFloating.cy = min( m_sizeMinFloating.cy, sizeMaxArea.cy );
@@ -194,8 +194,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 			case HTRIGHT:
 				m_pDockContext->m_rectFrameDragHorz=rcWin;
 				m_pDockContext->m_rectFrameDragHorz.right = cpt.x;
-				m_sizeMinFloating.cy = std::_cpp_max<int>(rcWin.bottom -rcWin.top-nGapGripper-3,32) ;
-				m_sizeMinFloating.cx = std::_cpp_max<int>(cpt.x-rcWin.left-4,32);
+				m_sizeMinFloating.cy = std::max<int>(rcWin.bottom -rcWin.top-nGapGripper-3,32) ;
+				m_sizeMinFloating.cx = std::max<int>(cpt.x-rcWin.left-4,32);
 
 				m_sizeMinFloating.cx = min( m_sizeMinFloating.cx, sizeMaxArea.cx );
 				m_sizeMinFloating.cy = min( m_sizeMinFloating.cy, sizeMaxArea.cy );
@@ -204,8 +204,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 			break;
 			case HTBOTTOM:
 				m_pDockContext->m_rectFrameDragHorz=rcWin;
-				m_sizeMinFloating.cy = std::_cpp_max<int>(cpt.y-rcWin.top -nGapGripper-3,32) ;
-				m_sizeMinFloating.cx = std::_cpp_max<int>(rcWin.right-rcWin.left-2,32)-4 ;
+				m_sizeMinFloating.cy = std::max<int>(cpt.y-rcWin.top -nGapGripper-3,32) ;
+				m_sizeMinFloating.cx = std::max<int>(rcWin.right-rcWin.left-2,32)-4 ;
 				m_pDockContext->m_rectFrameDragHorz.bottom = cpt.y-4;
 
 				m_sizeMinFloating.cx = min( m_sizeMinFloating.cx, sizeMaxArea.cx );
@@ -217,8 +217,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 				//---------------------------------------------------------
 			//En este caso crece la ventana a izquierda y hacia arriba
 			//izquierda incrementa cx y top incrementa cy
-				m_sizeMinFloating.cx = std::_cpp_max<int>(rcWin.right - cpt.x,32)-3 ;
-				m_sizeMinFloating.cy = std::_cpp_max<int>(rcWin.bottom -nGapGripper-cpt.y,32)-2 ;
+				m_sizeMinFloating.cx = std::max<int>(rcWin.right - cpt.x,32)-3 ;
+				m_sizeMinFloating.cy = std::max<int>(rcWin.bottom -nGapGripper-cpt.y,32)-2 ;
 
 				m_sizeMinFloating.cx = min( m_sizeMinFloating.cx, sizeMaxArea.cx );
 				m_sizeMinFloating.cy = min( m_sizeMinFloating.cy, sizeMaxArea.cy );
@@ -229,8 +229,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 				return m_sizeMinFloating;		
 				break;
 			case HTTOPRIGHT:
-				m_sizeMinFloating.cx = std::_cpp_max<int>(cpt.x-rcWin.left,32)-4 ;
-				m_sizeMinFloating.cy = std::_cpp_max<int>(rcWin.bottom -nGapGripper-cpt.y,32)-2 ;
+				m_sizeMinFloating.cx = std::max<int>(cpt.x-rcWin.left,32)-4 ;
+				m_sizeMinFloating.cy = std::max<int>(rcWin.bottom -nGapGripper-cpt.y,32)-2 ;
 				m_pDockContext->m_rectFrameDragHorz.top = cpt.y-1;
 				m_pDockContext->m_rectFrameDragHorz.right = cpt.x-2;
 
@@ -240,8 +240,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 				return m_sizeMinFloating;		
 				break;
 			case HTBOTTOMLEFT:
-				m_sizeMinFloating.cx = std::_cpp_max<int>(rcWin.right - cpt.x,32)-4;
-				m_sizeMinFloating.cy = std::_cpp_max<int>(cpt.y-rcWin.top -nGapGripper,32)-2 ;
+				m_sizeMinFloating.cx = std::max<int>(rcWin.right - cpt.x,32)-4;
+				m_sizeMinFloating.cy = std::max<int>(cpt.y-rcWin.top -nGapGripper,32)-2 ;
 				m_pDockContext->m_rectFrameDragHorz.top = rcWin.top;
 				m_pDockContext->m_rectFrameDragHorz.bottom = cpt.y-1;
 				m_pDockContext->m_rectFrameDragHorz.left = cpt.x-2;
@@ -251,8 +251,8 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 				return m_sizeMinFloating;		
 				break;
 			case HTBOTTOMRIGHT:
-				m_sizeMinFloating.cx = std::_cpp_max<int>(cpt.x-rcWin.left,32);
-				m_sizeMinFloating.cy = std::_cpp_max<int>(cpt.y-rcWin.top -nGapGripper,32) ;
+				m_sizeMinFloating.cx = std::max<int>(cpt.x-rcWin.left,32);
+				m_sizeMinFloating.cy = std::max<int>(cpt.y-rcWin.top -nGapGripper,32) ;
 				m_pDockContext->m_rectFrameDragHorz.top = rcWin.top;
 				m_pDockContext->m_rectFrameDragHorz.bottom = cpt.y+1;
 				m_pDockContext->m_rectFrameDragHorz.right = cpt.x+2;
@@ -267,9 +267,9 @@ CSize CMergeBar::CalcDynamicLayout(int nLength, DWORD nMode)
 	}
 
 	if(nMode & LM_LENGTHY)
-		 m_sizeMinFloating.cy = std::_cpp_max<int>(nLength,32);
+		 m_sizeMinFloating.cy = std::max<int>(nLength,32);
 	else
-	     m_sizeMinFloating.cx = std::_cpp_max<int>(nLength,32);
+	     m_sizeMinFloating.cx = std::max<int>(nLength,32);
 	return m_sizeMinFloating;
 
 }

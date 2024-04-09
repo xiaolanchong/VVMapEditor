@@ -25,7 +25,7 @@ class CAllMapView : public CScrollView
 
 //	void	DrawGetPoints( CDC* pDC );
 
-	std::auto_ptr<CBitmapBackground>	m_Background;
+	std::unique_ptr<CBitmapBackground>	m_Background;
 
 	CCrossDC					m_CrossDC;
 protected:

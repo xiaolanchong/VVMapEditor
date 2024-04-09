@@ -276,7 +276,8 @@ void CGuiEdit::AjustaCadena(int nStartPos,int  nEndPos )
 
 int CGuiEdit::FindLasCharR()
 {
-	for (int i=m_szShowMask.GetLength()-1;i> -1; i--)
+	int i = m_szShowMask.GetLength() - 1;
+	for (;i> -1; i--)
 	{
 		if (m_szShowMask.GetAt(i) ==' ' || IsPosMask(i))
 			continue;

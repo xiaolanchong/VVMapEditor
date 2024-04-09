@@ -3304,7 +3304,7 @@ BOOL CNewMenu::RemoveMenu(UINT uiId,UINT nFlags)
         {
           pSubMenu->RemoveMenu(i,MF_BYPOSITION);
         }
-        for(i=(int)m_MenuList.GetUpperBound();i>=0;i--)
+        for(int i=(int)m_MenuList.GetUpperBound();i>=0;i--)
         {
           if(m_MenuList[i]->m_nID==HMenuToUInt(pSubMenu->m_hMenu) )
           {
@@ -3378,7 +3378,7 @@ BOOL CNewMenu::DeleteMenu(UINT uiId,UINT nFlags)
         {
           pSubMenu->DeleteMenu(i,MF_BYPOSITION);
         }
-        for(i=(int)m_MenuList.GetUpperBound();i>=0;i--)
+        for(int i=(int)m_MenuList.GetUpperBound();i>=0;i--)
         {
           if(m_MenuList[i]->m_nID==HMenuToUInt(pSubMenu->m_hMenu) )
           {
@@ -4228,34 +4228,34 @@ CNewMenuHook::CNewMenuHook()
     }
   }
   AddTheme(new CMenuTheme(CNewMenu::STYLE_ORIGINAL,
-                          CNewMenu::MeasureItem_OldStyle,
-                          CNewMenu::DrawItem_OldStyle,
-                          CNewMenu::DrawMenuTitle,TRUE));
+                          &CNewMenu::MeasureItem_OldStyle,
+                          &CNewMenu::DrawItem_OldStyle,
+                          &CNewMenu::DrawMenuTitle,TRUE));
 
   AddTheme(new CMenuTheme(CNewMenu::STYLE_ORIGINAL_NOBORDER,
-                          CNewMenu::MeasureItem_OldStyle,
-                          CNewMenu::DrawItem_OldStyle,
-                          CNewMenu::DrawMenuTitle));
+                          &CNewMenu::MeasureItem_OldStyle,
+                          &CNewMenu::DrawItem_OldStyle,
+                          &CNewMenu::DrawMenuTitle));
 
   AddTheme(new CMenuThemeXP(CNewMenu::STYLE_XP,
-                            CNewMenu::MeasureItem_WinXP,
-                            CNewMenu::DrawItem_WinXP,
-                            CNewMenu::DrawMenuTitle,TRUE));
+                            &CNewMenu::MeasureItem_WinXP,
+                            &CNewMenu::DrawItem_WinXP,
+                            &CNewMenu::DrawMenuTitle,TRUE));
 
   AddTheme(new CMenuThemeXP(CNewMenu::STYLE_XP_NOBORDER,
-                            CNewMenu::MeasureItem_WinXP,
-                            CNewMenu::DrawItem_WinXP,
-                            CNewMenu::DrawMenuTitle));
+                            &CNewMenu::MeasureItem_WinXP,
+                            &CNewMenu::DrawItem_WinXP,
+                            &CNewMenu::DrawMenuTitle));
 
   AddTheme(new CMenuTheme(CNewMenu::STYLE_SPECIAL,
-                          CNewMenu::MeasureItem_OldStyle,
-                          CNewMenu::DrawItem_SpecialStyle,
-                          CNewMenu::DrawMenuTitle,TRUE));
+                          &CNewMenu::MeasureItem_OldStyle,
+                          &CNewMenu::DrawItem_SpecialStyle,
+                          &CNewMenu::DrawMenuTitle,TRUE));
 
   AddTheme(new CMenuTheme(CNewMenu::STYLE_SPECIAL_NOBORDER,
-                          CNewMenu::MeasureItem_OldStyle,
-                          CNewMenu::DrawItem_SpecialStyle,
-                          CNewMenu::DrawMenuTitle));
+                          &CNewMenu::MeasureItem_OldStyle,
+                          &CNewMenu::DrawItem_SpecialStyle,
+                          &CNewMenu::DrawMenuTitle));
 
 //  CNewMenu::m_pActMenuDrawing = FindTheme(CNewMenu::STYLE_ORIGINAL);
 //  CNewMenu::m_pActMenuDrawing = FindTheme(CNewMenu::STYLE_ORIGINAL_NOBORDER);

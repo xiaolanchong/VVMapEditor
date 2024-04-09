@@ -769,7 +769,8 @@ void CMenuBar::OnInitMenuPopup(CMenu* pPopupMenu, UINT nIndex, BOOL bSysMenu)
 	// scan for first window command
 	int n = menu.GetMenuItemCount();
 	BOOL bAddSeperator = TRUE;
-	for (int iPos=0; iPos<n; iPos++) {
+	int iPos = 0;
+	for (; iPos < n; iPos++) {
 		if (menu.GetMenuItemID(iPos) >= AFX_IDM_FIRST_MDICHILD) {
 			bAddSeperator = FALSE;
 			break;
@@ -879,7 +880,7 @@ void CMenuBar::OnNcPaint()
 	EraseNonClientEx();
 }
 //******************************************************************
-UINT CMenuBar::OnNcHitTest(CPoint point) 
+LRESULT CMenuBar::OnNcHitTest(CPoint point) 
 {
 	// make nonclient area clickable
 	return HTCLIENT;

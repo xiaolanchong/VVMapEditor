@@ -11,7 +11,7 @@
 
 
 #include <map>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 #include <GuiFrameWnd.h>
 // Bars
 #include "CameraBar.h"
@@ -35,13 +35,13 @@ protected: // create from serialization only
 
 protected:
 
-	typedef std::map<int, boost::shared_ptr<CCameraBar> > WndMap_t ;
+	typedef std::map<int, std::shared_ptr<CCameraBar> > WndMap_t ;
 	WndMap_t m_Windows;
 
-	typedef std::map<int, boost::shared_ptr<CMergeBar> > MergeMap_t ;
+	typedef std::map<int, std::shared_ptr<CMergeBar> > MergeMap_t ;
 	MergeMap_t m_Merges;
 
-	typedef std::map<int, boost::shared_ptr<CExtentBar> > ExtentWndMap_t ;
+	typedef std::map<int, std::shared_ptr<CExtentBar> > ExtentWndMap_t ;
 	ExtentWndMap_t m_ExtentWnds;
 
 	std::vector< std::pair<int, int> >	m_MergedWnd;

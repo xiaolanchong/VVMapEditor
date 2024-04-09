@@ -12,7 +12,7 @@
 #include "Background.h"
 #include "Exception.h"
 #include <string>
-#include <boost/scoped_array.hpp>
+#include <memory>
 
 MACRO_EXCEPTION(ImageException, CommonException);
 MACRO_EXCEPTION(ImageFileException, ImageException);
@@ -34,7 +34,7 @@ class CBitmapBackground : public CPicBackground
 	};
 
 	BITMAPINFO					m_bi;
-	boost::scoped_array<BYTE>	m_bits;	
+	std::unique_ptr<BYTE[]>	m_bits;
 	Copy<BYTE>					m_copy;
 
 	Bitmap			m_Image;

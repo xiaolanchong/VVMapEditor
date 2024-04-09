@@ -34,7 +34,8 @@ public:
 
 	long	GetError() const { return m_Error;}
 
-	void operator = (long res) throw(VVMapTransException);
+	// @throw VVMapTransException
+	void operator = (long res) ;
 
 };
 

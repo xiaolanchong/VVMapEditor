@@ -199,7 +199,8 @@ void CGuiSliderCtrl::DrawHThumb(CDC* pDC,CRect rcClient)
 		pDC->SetPixel(rcClient.left+nMedio+y,rcClient.top+y,m_dl.GetRGBPressBXP());
 		pDC->SetPixel(rcClient.left+nMedio+y,rcClient.bottom-y,m_dl.GetRGBPressBXP());
 	}
-	pDC->SetPixel(rcClient.left+nMedio+y,rcClient.bottom-y,m_dl.GetRGBPressBXP());
+	const int y_after_for = 5;
+	pDC->SetPixel(rcClient.left+nMedio+ y_after_for,rcClient.bottom- y_after_for,m_dl.GetRGBPressBXP());
 	
 	//pDC->SetPixel(rcClient.right-y,rcClient.top+nMedio+y,m_dl.GetRGBPressBXP());
 
@@ -211,7 +212,7 @@ void CGuiSliderCtrl::DrawHThumb(CDC* pDC,CRect rcClient)
 	//-----------------------------------------------------------
 	pDC->SelectObject(bSelected!=TRUE?&cpGreen:&cpOrange);
 	
-	for (y =0; y<5;y++)
+	for (int y =0; y<5;y++)
 	{
 		pDC->SetPixel(rcClient.left+nMedio+y,(rcClient.top+y)+1,
 			bSelected!=TRUE?m_clrGreen:m_clrOrange);
@@ -225,7 +226,7 @@ void CGuiSliderCtrl::DrawHThumb(CDC* pDC,CRect rcClient)
 	//-----------------------------------------------------------
 	pDC->SelectObject(bSelected!=TRUE?&cpGreen:&cpOrange);
 	
-	for (y =0; y<4;y++)
+	for (int y =0; y<4;y++)
 	{
 		pDC->SetPixel(rcClient.left+nMedio+y,(rcClient.top+y)+2,
 			RGB(225,225,225));
@@ -312,7 +313,8 @@ void CGuiSliderCtrl::DrawVThumb(CDC* pDC,CRect rcClient)
 		pDC->SetPixel(rcClient.left+y,rcClient.top+nMedio+y,m_dl.GetRGBPressBXP());
 		pDC->SetPixel(rcClient.right-y,rcClient.top+nMedio+y,m_dl.GetRGBPressBXP());
 	}
-	pDC->SetPixel(rcClient.right-y,rcClient.top+nMedio+y,m_dl.GetRGBPressBXP());
+	const int y_after_for = 5;
+	pDC->SetPixel(rcClient.right- y_after_for,rcClient.top+nMedio+ y_after_for,m_dl.GetRGBPressBXP());
 	//********************************************************
 	
 	//-----------------------------------------------------------
@@ -321,7 +323,7 @@ void CGuiSliderCtrl::DrawVThumb(CDC* pDC,CRect rcClient)
 	//-----------------------------------------------------------
 	pDC->SelectObject(bSelected!=TRUE?&cpGreen:&cpOrange);
 	
-	for (y =0; y<5;y++)
+	for (int y =0; y<5;y++)
 	{
 		pDC->SetPixel((rcClient.left+y)+1,rcClient.top+nMedio+y,
 			bSelected!=TRUE?m_clrGreen:m_clrOrange);
@@ -335,7 +337,7 @@ void CGuiSliderCtrl::DrawVThumb(CDC* pDC,CRect rcClient)
 	//-----------------------------------------------------------
 	pDC->SelectObject(bSelected!=TRUE?&cpGreen:&cpOrange);
 	
-	for (y =0; y<4;y++)
+	for (int y =0; y<4;y++)
 	{
 		pDC->SetPixel((rcClient.left+y)+2,rcClient.top+nMedio+y,
 			RGB(225,225,225));

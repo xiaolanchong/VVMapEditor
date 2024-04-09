@@ -22,6 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>MFCProj</Keyword>
     <ProjectGuid>{ADBB4B41-E9B9-44B5-978D-027ECFD61421}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -106,6 +107,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <CustomBuildStep>
       <Message>copy to ../../BIN/Release</Message>
@@ -155,14 +157,15 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <CustomBuildStep>
-      <Command>copy "$(TargetPath)" "..\..\BIN\Debug\$(TargetName).exe"
+      <Command>copy "$(TargetPath)" "..\BIN\Debug\$(TargetName).exe"
 </Command>
-      <Outputs>..\..\BIN\Debug\$(TargetName).exe;%(Outputs)</Outputs>
+      <Outputs>..\BIN\Debug\$(TargetName).exe;%(Outputs)</Outputs>
     </CustomBuildStep>
     <Link>
-      <AdditionalDependencies>dbghelp.lib;gdiplus.lib;winmm.lib;strmiids.lib;dxerr9.lib;vfw32.lib;version.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>dbghelp.lib;gdiplus.lib;winmm.lib;strmiids.lib;vfw32.lib;version.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>.\Unicode_Debug/VVMapEditor.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>..\..\..\..\3rd_party\DXSDK2004Jul\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -204,6 +207,7 @@
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <CompileAs>Default</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "../BIN/Release/$(TargetName).exe"
@@ -253,6 +257,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <CustomBuildStep>
       <Command>copy "$(TargetPath)" "../BIN/Debug/$(TargetName).exe"
@@ -291,7 +296,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -300,7 +305,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -309,7 +314,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -318,7 +323,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -327,7 +332,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -336,7 +341,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -345,7 +350,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -354,7 +359,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -363,7 +368,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -372,7 +377,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -381,7 +386,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -390,7 +395,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -399,7 +404,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -408,7 +413,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -417,7 +422,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -426,7 +431,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -435,7 +440,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -444,7 +449,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -453,7 +458,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -462,7 +467,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -474,7 +479,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -483,7 +488,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -492,7 +497,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -501,7 +506,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -510,7 +515,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -519,7 +524,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -528,7 +533,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -537,7 +542,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -546,7 +551,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -555,7 +560,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -564,7 +569,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -573,7 +578,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -582,7 +587,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -591,7 +596,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -600,7 +605,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -609,7 +614,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -618,7 +623,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -627,7 +632,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -636,7 +641,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -645,7 +650,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -655,7 +660,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -664,7 +669,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -673,7 +678,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -682,7 +687,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -691,7 +696,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -700,7 +705,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -709,7 +714,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -718,7 +723,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -727,7 +732,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -736,7 +741,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -745,7 +750,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -754,7 +759,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -763,7 +768,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -772,7 +777,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -781,7 +786,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -790,7 +795,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -799,7 +804,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -808,7 +813,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -817,7 +822,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -826,7 +831,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -835,7 +840,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -844,7 +849,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -855,7 +860,7 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Create</PrecompiledHeader>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
@@ -866,7 +871,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -875,7 +880,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -884,7 +889,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -893,7 +898,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -902,7 +907,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -911,7 +916,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -920,7 +925,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -929,7 +934,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -938,7 +943,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -947,7 +952,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -956,7 +961,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -965,7 +970,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -974,7 +979,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -983,7 +988,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -992,7 +997,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1001,7 +1006,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1010,7 +1015,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1019,7 +1024,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1028,7 +1033,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1037,7 +1042,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1046,7 +1051,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1055,7 +1060,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1064,7 +1069,7 @@
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">Disabled</Optimization>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;_WIN32_WINNT=0x0400;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_AFXDLL;_UNICODE;GRIDCONTROL_NO_DRAGDROP;GRIDCONTROL_NO_CLIPBOARD</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">MaxSpeed</Optimization>
     </ClCompile>
@@ -1166,6 +1171,17 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\baseclasses\baseclasses.vcxproj">
+      <Project>{e8a3f6fa-ae1c-4c8e-a0b6-9c8480324eaa}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\VVMapInterface\VVMapInterface80.vcxproj">
+      <Project>{0b7c220f-2c7c-44de-8fd1-a13a810121f5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="GuiLib\GUILIB\GuiLib.vcxproj">
+      <Project>{6f3a1336-57ae-4e33-8851-173a95aa5955}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

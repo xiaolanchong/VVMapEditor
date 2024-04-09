@@ -1,12 +1,12 @@
 #ifndef _CALLBACK_H_
 #define _CALLBACK_H_
 
-#include <boost/any.hpp>
+#include <any>
 #include <vector>
 
 struct  PropertyObserver
 {
-	virtual void OnPropertyChange(CString Name, const boost::any& Value) = 0;
+	virtual void OnPropertyChange(CString Name, const std::any& Value) = 0;
 };
 
 	struct PropertyCB

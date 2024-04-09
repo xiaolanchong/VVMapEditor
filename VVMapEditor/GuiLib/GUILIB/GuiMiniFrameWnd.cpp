@@ -465,7 +465,7 @@ void CGuiMiniFrameWnd::OnSetFocus(CWnd* pOldWnd)
 }
 
 
-UINT CGuiMiniFrameWnd::OnNcHitTest(CPoint point)
+LRESULT CGuiMiniFrameWnd::OnNcHitTest(CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 	CRect rcWindow;

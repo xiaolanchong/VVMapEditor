@@ -928,7 +928,7 @@ LRESULT CCoolMenuManager::OnMenuChar(UINT nChar, UINT nFlags, CMenu* pMenu)
 
 	// more than one found--return 1st one past current selected item;
 	UINT iSelect = 0;
-	for (i=0; i < nFound; i++) {
+	for (UINT i=0; i < nFound; i++) {
 		if (arItemsMatched[i] > iCurrentItem) {
 			iSelect = i;
 			break;

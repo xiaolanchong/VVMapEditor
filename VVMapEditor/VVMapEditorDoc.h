@@ -27,7 +27,7 @@
 #endif // _MSC_VER > 1000
 
 #include <algorithm>
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 #include "PointList.h"
 #include "ChooseCompressor.h"
@@ -292,8 +292,10 @@ private:
 //-----------------------------------------------------------------------------
 // Purpose: for serializing data
 //-----------------------------------------------------------------------------
-	void	Load() throw (VVMapTransException);
-	void	Save() throw (VVMapTransException);
+	// throw (VVMapTransException)
+	void	Load();
+	// throw (VVMapTransException)
+	void	Save();
 //NOTENOTE: not only in Save() & Load()
 	int		LoadIZ();
 	void	SaveIZ() const;	
@@ -472,12 +474,12 @@ public:
 	bool	ChangeRefPoint( int nRefPoint, int Number, int nPoint, double fDistance );
 	bool	IsValidRefPoint ( int nRefNumber) const;
 
-	std::auto_ptr<CBitmapBackground>	CreateViewBitmap(  ) const;
+	std::unique_ptr<CBitmapBackground>	CreateViewBitmap(  ) const;
 
 
 //	bool	IsPointValid( int nGroupIndex ) ;
 
-	std::auto_ptr<CFilterCache>	GetFilterCache();
+	std::unique_ptr<CFilterCache>	GetFilterCache();
 
 	void	OnShowMaster();
 	void	OnCloseMaster();

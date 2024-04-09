@@ -26,7 +26,25 @@ MACRO_EXCEPTION(ConnectErrorException, RealtimeVideoException);
 MACRO_EXCEPTION(VideoFormatException, RealtimeVideoException);
 MACRO_EXCEPTION(RecordException, RealtimeVideoException);
 
+#ifdef ORWELL_CAM
 using namespace Elvees::Win32;
+#else
+
+class CImage
+{
+public:
+	virtual ~CImage() = default;
+	virtual void AddRef() = 0;
+	virtual void Release() = 0;
+
+	virtual void CreateCopy(CImage** ppImage) = 0;
+	virtual void GetImageInfo(BITMAPINFO* bmi) = 0;
+	virtual void GetImageBytes(LPBYTE* bytes) = 0;
+};
+
+bool CreateImage(CImage** ppImage, int CamID);
+
+#endif
 
 class CRealtimeBackground : public CControlBackground  
 {

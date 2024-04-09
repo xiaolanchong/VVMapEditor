@@ -229,7 +229,7 @@ void	CVVMapEditorDoc::CreateCommonArea(const std::vector<int>& CameraIDs, bool b
 
 	m_Ids = CameraIDs;
 
-	for( /*int*/ i=0; i < num; ++i )
+	for( int i=0; i < num; ++i )
 	{
 		m_Polygons[i].resize( m_Ids.size() );
 		m_Horyzons[i].clear();
@@ -239,7 +239,7 @@ void	CVVMapEditorDoc::CreateCommonArea(const std::vector<int>& CameraIDs, bool b
 
 	VVError Res( m_VVMapTrans );
 	Res = m_VVMapTrans->SetNumOfMasters( m_Ids.size() );
-	for(  i=0; i < m_Ids.size(); ++i )
+	for(size_t i=0; i < m_Ids.size(); ++i )
 	{
 		m_VVMapTrans->SetMasterID( i, m_Ids[i] );
 		//NOTENOTE: We want all views on start
@@ -603,7 +603,7 @@ void	CVVMapEditorDoc::CreatePolygon(bool bWithMap)
 	if(bWithMap)
 	{
 		if( m_bMap)
-		for( i = 0 ; i < m_Ids.size(); ++i)
+		for( size_t i = 0 ; i < m_Ids.size(); ++i)
 		{
 			err = m_VVMapTrans->GetMapPolygon( i, &num, &buf );
 				CString sss; sss.Format(_T("Failed to create polygon %d->map\n"), i );
@@ -724,7 +724,7 @@ void	CVVMapEditorDoc::Load() throw (VVMapTransException)
 
 	SetIZMaster(0);
 
-	for( int  i=0; i < Number; ++i )
+	for( int i=0; i < Number; ++i )
 	{
 		long id;
 		m_VVMapTrans->GetMasterID( i, &id );
@@ -757,7 +757,7 @@ void	CVVMapEditorDoc::Load() throw (VVMapTransException)
 	long	PointNumber;
 	res = m_VVMapTrans->GetPointList(  &PointNumber, (long**)&Points );
 
-	for( i = 0; i < PointNumber; ++i  )
+	for(int i = 0; i < PointNumber; ++i  )
 	{
 		int ind = (Number+1)*i;
 		if(Points[ind]  != CPoint(-1,-1))
@@ -793,7 +793,7 @@ void	CVVMapEditorDoc::Load() throw (VVMapTransException)
 	long err;
 		POINT*	buf;
 
-	for(  i = 0 ; i < m_Ids.size(); ++i  )
+	for( size_t i = 0 ; i < m_Ids.size(); ++i  )
 	{
 		for( int j = 0 ; j < m_Ids.size(); ++j)
 		{
@@ -813,7 +813,7 @@ void	CVVMapEditorDoc::Load() throw (VVMapTransException)
 	if(true)
 	{
 		if( m_bMap)
-		for( i = 0 ; i < m_Ids.size(); ++i)
+		for(size_t i = 0 ; i < m_Ids.size(); ++i)
 		{
 			err = m_VVMapTrans->GetMapPolygon( i, &Number, &buf );
 			if(err) continue;
@@ -827,7 +827,7 @@ void	CVVMapEditorDoc::Load() throw (VVMapTransException)
 
 	long	nZoneNumber;
 	res = m_VVMapTrans->IZ_GetNumOfZones(&nZoneNumber);
-	for(i =0; i < nZoneNumber; ++i)
+	for(long i =0; i < nZoneNumber; ++i)
 	{
 		long	nMaster; long nPointNumber;
 		POINT*	pptInvZone;
@@ -894,7 +894,7 @@ void	CVVMapEditorDoc::Fill(PointList& pl)  throw(VVMapTransException)
 	}
 	
 	m_bMap = false;
-	for( i = 0 ; i < nID.size(); ++i)
+	for(size_t i = 0 ; i < nID.size(); ++i)
 	{
 		err = m_VVMapTrans->GetMapPolygon( i, &num, &buf );
 		m_MapPolygons[ nID[i] ] .resize( num );
@@ -1379,7 +1379,7 @@ Bitmap*	CVVMapEditorDoc::CreateBitmap( int nIndex, CRect rcArea )
 		}
 	}
 
-	for( i=0; i < m_Ids.size(); ++i)
+	for(size_t i=0; i < m_Ids.size(); ++i)
 	{
 		MasterBmp[i]->UnlockBits( &MasterBitmapData[i] );
 		::delete MasterBmp[i];
@@ -1444,7 +1444,7 @@ void	CVVMapEditorDoc::Renumber(const std::vector<int>& Current, const std::vecto
 //		}
 	}
 	m_Ids = NewIds;
-	for(  i=0; i < m_Ids.size(); ++i)
+	for(size_t i=0; i < m_Ids.size(); ++i)
 	{
 		m_VVMapTrans->SetMasterID( i, m_Ids[i]  );
 	}
@@ -2532,7 +2532,7 @@ void	CVVMapEditorDoc::RemoveDependentRefPoints( std::set<int>& Anchors )
 	}
 
 	//NOTENOTE: should use remove_if/erase paradigm
-	for(  i=0; i < rpm.size(); ++i )
+	for(size_t i=0; i < rpm.size(); ++i )
 	{
 		RefPoint_t & rp = rpm[i];
 		RefPoint_t::iterator itr = rp.begin();
@@ -2551,15 +2551,8 @@ void	CVVMapEditorDoc::RemoveDependentRefPoints( std::set<int>& Anchors )
 		}
 	}
 }
-/*
-template<typename T>  void global_delete(T* x)
-{
-	::delete x;
-}*/
 
-void global_delete (Bitmap*x) { ::delete x;}
-
-std::auto_ptr<CBitmapBackground >	CVVMapEditorDoc::CreateViewBitmap() const
+std::unique_ptr<CBitmapBackground >	CVVMapEditorDoc::CreateViewBitmap() const
 {
 	long err;
 	std::vector<DWORD>	Colors;
@@ -2598,7 +2591,7 @@ std::auto_ptr<CBitmapBackground >	CVVMapEditorDoc::CreateViewBitmap() const
 	BITMAPINFO* pBmpInfo;
 	BYTE*		pBits;
 	err = m_VVMapTrans->GetProcessedBitmap( &pBmpInfo, &pBits);
-	if(err || !pBmpInfo || !pBits ) return std::auto_ptr<CBitmapBackground > (0);
+	if(err || !pBmpInfo || !pBits ) return std::unique_ptr<CBitmapBackground > ();
 
 	BITMAPINFO	bi;
 /*	memset(&bi, 0, sizeof(BITMAPINFO));
@@ -2613,11 +2606,11 @@ std::auto_ptr<CBitmapBackground >	CVVMapEditorDoc::CreateViewBitmap() const
 	memcpy(&bi, pBmpInfo, sizeof(BITMAPINFO));
 	try
 	{
-		return std::auto_ptr<CBitmapBackground > (  new CBitmapBackground (&bi, pBits) );
+		return std::unique_ptr<CBitmapBackground > (  new CBitmapBackground (&bi, pBits) );
 	}
 	catch( ImageFileException )
 	{
-		return std::auto_ptr<CBitmapBackground > (  );
+		return std::unique_ptr<CBitmapBackground > (  );
 	}
 }
 
@@ -2716,7 +2709,7 @@ inline int GetMinCount( CSettings::Filter_t Filter )
 	}
 }
 
-std::auto_ptr<CFilterCache>	CVVMapEditorDoc::GetFilterCache()
+std::unique_ptr<CFilterCache>	CVVMapEditorDoc::GetFilterCache()
 {
 	CSettings::Filter_t Filter = GetSettings().GetFilter();
 
@@ -2748,7 +2741,7 @@ std::auto_ptr<CFilterCache>	CVVMapEditorDoc::GetFilterCache()
 			}
 		}
 
-		for( i = 0; i < AllGroups.size(); ++i)
+		for(int i = 0; i < AllGroups.size(); ++i)
 		{
 			if( AllGroups[i] >= GetMinCount(Filter) )
 			{
@@ -2770,7 +2763,7 @@ std::auto_ptr<CFilterCache>	CVVMapEditorDoc::GetFilterCache()
 				VisibleCams.insert( i );
 	}
 
-	return std::auto_ptr<CFilterCache>( new CFilterCache( this, VisibleCams, ValidGroups  ) );
+	return std::unique_ptr<CFilterCache>( new CFilterCache( this, VisibleCams, ValidGroups  ) );
 }
 
 void	CVVMapEditorDoc::OnShowMaster()
@@ -2891,10 +2884,10 @@ CRect	CVVMapEditorDoc::GetMapPanoramaRect(CSize sizeMap)
 				if(res) continue;
 				if( rcArea.PtInRect( CPoint(xto, yto) )  )
 				{
-					rcMapArea.left	= std::_cpp_min( rcMapArea.left, xto );
-					rcMapArea.right	= std::_cpp_max( rcMapArea.right, xto );
-					rcMapArea.top	= std::_cpp_min( rcMapArea.top, yto );
-					rcMapArea.bottom= std::_cpp_max( rcMapArea.bottom, yto );
+					rcMapArea.left	= std::min( rcMapArea.left, xto );
+					rcMapArea.right	= std::max( rcMapArea.right, xto );
+					rcMapArea.top	= std::min( rcMapArea.top, yto );
+					rcMapArea.bottom= std::max( rcMapArea.bottom, yto );
 				}
 			}
 	}
@@ -2927,10 +2920,10 @@ Bitmap* CVVMapEditorDoc::CreateMapBitmap( )
 	if( !GetMapView()->GetBackground() ) return 0;
 	CSize sizeMap = GetMapView()->GetBackground()->GetSize();
 	CRect rcProbableArea = GetMapPanoramaRect( sizeMap );
-	CRect rcArea (	std::_cpp_max<int>( 0, rcProbableArea.left)  , 
-				   	std::_cpp_max<int>( 0, rcProbableArea.top)  ,
-					std::_cpp_min<int>( sizeMap.cx, rcProbableArea.right)  ,
-					std::_cpp_min<int>( sizeMap.cy, rcProbableArea.bottom)  ); 
+	CRect rcArea (	std::max<int>( 0, rcProbableArea.left)  , 
+				   	std::max<int>( 0, rcProbableArea.top)  ,
+					std::min<int>( sizeMap.cx, rcProbableArea.right)  ,
+					std::min<int>( sizeMap.cy, rcProbableArea.bottom)  ); 
 
 	std::map<int ,CCameraView*> Views = GetCameraViews();
 
@@ -3001,7 +2994,7 @@ Bitmap* CVVMapEditorDoc::CreateMapBitmap( )
 		}
 	}
 
-	for( i=0; i < m_Ids.size(); ++i)
+	for(size_t i=0; i < m_Ids.size(); ++i)
 	{
 		MasterBmp[i]->UnlockBits( &MasterBitmapData[i] );
 		::delete MasterBmp[i];

@@ -9,7 +9,8 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
-#include <boost/shared_ptr.hpp>
+//#include <boost/shared_ptr.hpp>
+#include <memory>
 
 struct CStateCache  
 {
@@ -18,8 +19,8 @@ struct CStateCache
 
 	CPoint									m_Point;
 	long									m_lError;
-	static	boost::shared_ptr<CImageList>	s_ilState;
-	boost::shared_ptr<CBitmap>			m_pOldBitmap;
+	static	std::shared_ptr<CImageList>	s_ilState;
+	std::shared_ptr<CBitmap>			m_pOldBitmap;
 
 	CStateCache();
 	CStateCache(	CPoint	point,	// center

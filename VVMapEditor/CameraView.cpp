@@ -145,7 +145,7 @@ void CCameraView::OnInitialUpdate()
 			bi.bmiHeader.biClrUsed = 0;
 			bi.bmiHeader.biCompression = BI_RGB;
 			bi.bmiHeader.biPlanes = 1;
-			m_Background = std::auto_ptr<CBackground>(new CBitmapBackground(&bi, pbits) );
+			m_Background = std::unique_ptr<CBackground>(new CBitmapBackground(&bi, pbits) );
 		}
 
 		SetScroll( );
@@ -256,7 +256,7 @@ void	CCameraView::DrawPoints(Graphics& gr, const CRect& rcClient)
 		const PointArr_t& pt = pDoc->Points().m_Points[ Index ];
 		int TotalPoint = 0;
 
-		std::auto_ptr<CFilterCache> pFilterCache = pDoc->GetFilterCache();
+		std::unique_ptr<CFilterCache> pFilterCache = pDoc->GetFilterCache();
 
 		for( int i = 0 ;i < pt.size(); ++i)
 		{
@@ -358,6 +358,8 @@ void	CCameraView::DrawPolygons(Graphics& gr)
 		for(int zzz = 0; itr != pDoc->m_Polygons[Index].end();++itr, ++zzz )
 		{
 			const Polygon_t& pt = *itr ;
+			if (pt.empty())
+				break;
 			int PointNumber = pt.size();
 //			const PointF* ptz = &pt[0];
 			int z = pDoc->IndexToId( zzz );
@@ -429,7 +431,7 @@ void	CCameraView::DrawSelectPoint(int nGroupNumber)
 	{
 		int Index = pDoc->IdToIndex(m_Number);
 
-		std::auto_ptr<CFilterCache> pFilterCache = pDoc->GetFilterCache();
+		std::unique_ptr<CFilterCache> pFilterCache = pDoc->GetFilterCache();
 		const std::pair<bool, PointF>& ptz = pDoc->Points().m_Points[Index][nGroupNumber];
 
 		if(ptz.first && pFilterCache->IsPointValid( nGroupNumber, Index )  )
@@ -556,7 +558,7 @@ void	CCameraView::OnMasterImage()
 
 	try
 	{
-		m_Background = std::auto_ptr<CBackground> ( new CBitmapBackground( str ) );
+		m_Background = std::unique_ptr<CBackground> ( new CBitmapBackground( str ) );
 		SetScroll();
 
 	}
@@ -578,7 +580,7 @@ void	CCameraView::OnMasterVideo()
 
 	try
 	{
-		m_Background = std::auto_ptr<CBackground> ( new CVideoBackground( this, str ) );
+		m_Background = std::unique_ptr<CBackground> ( new CVideoBackground( this, str ) );
 /*		CSize size = m_Background->GetSize();
 //		SetScrollSizes(MM_TEXT, size - CSize(4,4));
 		CRect rc;
@@ -642,7 +644,7 @@ void CCameraView::OnLButtonDown(UINT nFlags, CPoint point)
 			pDoc->FillGroupCameraMenu(m_GroupMenu, Index);
 			CPoint ptScr(point); 
 			ClientToScreen(&ptScr);
-			m_EditorState.m_Edit = std::auto_ptr<ItemEditState>( new PointEditState( PointF (point.x, point.y) ) );
+			m_EditorState.m_Edit = std::unique_ptr<ItemEditState>( new PointEditState( PointF (point.x, point.y) ) );
 			BOOL nID = m_GroupMenu.TrackPopupMenu( TPM_RETURNCMD|TPM_NONOTIFY , ptScr.x, ptScr.y, this );
 			if( nID != 0)
 			{
@@ -662,12 +664,12 @@ void CCameraView::OnLButtonDown(UINT nFlags, CPoint point)
 				if( PtIndex.first != -1 )
 				{
 					CRectF& rect = pDoc->Extents()[Index][PtIndex.first];
-					m_EditorState.m_Edit = std::auto_ptr<ItemEditState>
+					m_EditorState.m_Edit = std::unique_ptr<ItemEditState>
 							( new ExtentSelectedEditState( ptf, PtIndex.first, rect, PtIndex.second ) );
 				}
 				else
 				{
-					m_EditorState.m_Edit = std::auto_ptr<ItemEditState>
+					m_EditorState.m_Edit = std::unique_ptr<ItemEditState>
 							( new ExtentNewEditState( ptf ) );
 				}
 				
@@ -719,7 +721,7 @@ void CCameraView::OnRButtonDown(UINT nFlags, CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 	CVVMapEditorDoc* pDoc = GetDocument();
-	const nRadius = 15;
+	const int nRadius = 15;
 	CRect rc( point, CSize(nRadius,nRadius) );
 	rc.OffsetRect( -nRadius/2, -nRadius/2);
 	if(	pDoc->IsCurrent() &&
@@ -736,7 +738,7 @@ void CCameraView::OnRButtonDown(UINT nFlags, CPoint point)
 			{
 				pDoc->Backup();
 
-				m_EditorState.m_Edit = std::auto_ptr<ItemEditState>
+				m_EditorState.m_Edit = std::unique_ptr<ItemEditState>
 					(new PointSelEditState( pDoc->Points().m_Points[Index][i].second ));
 				m_EditorState.m_State = EditorState::EDIT;
 				
@@ -948,7 +950,9 @@ static DWORD GetBmpLenght(LPBITMAP pBITMAP)
 	return ((pBITMAP->bmWidth * pBITMAP->bmPlanes * pBITMAP->bmBitsPixel + 31) & ~31) /8 * pBITMAP->bmHeight;
 }
 
+#if 0
 using namespace Elvees::Win32;
+#endif
 
 void	CCameraView::DrawSRSPoints( Graphics& gr, Bitmap& bmp )
 {
@@ -1016,7 +1020,7 @@ void CCameraView::OnMasterCamera()
 	try
 	{
 		CRealtimeBackground* pBg = new CRealtimeBackground(  this,/* CamID*/ m_Number ) ;
-		m_Background = std::auto_ptr<CBackground> ( pBg );
+		m_Background = std::unique_ptr<CBackground> ( pBg );
 		ResetAllSettings();
 //		m_PlayerSettings.State = PlayerSettings::play;
 	}
@@ -1034,8 +1038,8 @@ void	AdjustForMinExtentSize( RectF& rcf )
 	const double n_MinExtentX = 5.0f;
 	const double n_MinExtentY = 5.0f;
 
-	rcf.Width = std::_cpp_max<double>( n_MinExtentX, rcf.Width  );
-	rcf.Height = std::_cpp_max<double>( n_MinExtentY, rcf.Height  );
+	rcf.Width = std::max<double>( n_MinExtentX, rcf.Width  );
+	rcf.Height = std::max<double>( n_MinExtentY, rcf.Height  );
 }
 
 void CCameraView::OnLButtonUp(UINT nFlags, CPoint point) 
@@ -1064,7 +1068,7 @@ void CCameraView::OnLButtonUp(UINT nFlags, CPoint point)
 				// need to delegate for CVVMapEditorDoc
 				pDoc->Extents()[nIndex].push_back( rcf );
 				int Number = pDoc->Extents()[nIndex].size() - 1;
-				m_EditorState.m_Edit = std::auto_ptr<ItemEditState>
+				m_EditorState.m_Edit = std::unique_ptr<ItemEditState>
 					(new ExtentSelectedEditState( ptf, Number, RectF(), 0 ) );
 			}
 			else if( pExtSelEdit )
@@ -1113,7 +1117,7 @@ void	CCameraView::Pause()
 void CCameraView::OnMasterEmtpy() 
 {
 	// TODO: Add your command handler code here
-	m_Background = std::auto_ptr<CBackground>(new CEmptyBackground);
+	m_Background = std::unique_ptr<CBackground>(new CEmptyBackground);
 	Invalidate();
 }
 
@@ -1218,14 +1222,14 @@ void CCameraView::OnCancelMode()
 			if (rcf.Height < 5) rcf.Height = 5;
 			pDoc->Extents()[nIndex].push_back( rcf );
 			int Number = pDoc->Extents()[nIndex].size() - 1;
-			m_EditorState.m_Edit = std::auto_ptr<ItemEditState>
+			m_EditorState.m_Edit = std::unique_ptr<ItemEditState>
 				(new ExtentSelectedEditState( PointF(), Number, RectF(), 0 ) );
 		}		
 	}
 	else if(	m_EditorState.m_State == EditorState::EDIT && 
 				pDoc->m_State == CVVMapEditorDoc::edit_points )
 	{
-			m_EditorState.m_Edit = std::auto_ptr<ItemEditState>(0);
+			m_EditorState.m_Edit = std::unique_ptr<ItemEditState>();
 	}
 	m_EditorState.m_State = EditorState::NONE;
 	EndEdit();
@@ -1250,7 +1254,7 @@ void CCameraView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 			int n = pDoc->IdToIndex(m_Number);
 			pDoc->Backup();
 			pDoc->Extents()[n].erase( pDoc->Extents()[n].begin() + pExtSelEdit->GetSelectExtent() );
-			m_EditorState.m_Edit = std::auto_ptr<ItemEditState>(0);
+			m_EditorState.m_Edit = std::unique_ptr<ItemEditState>();
 			Invalidate();
 		}
 	}
@@ -1442,6 +1446,8 @@ void	CCameraView::DrawHoryzon( Graphics& gr )
 	Pen		penHoriz( clHoriz, 2);
 
 	const Polygon_t& Pol = pDoc->GetHoryzon( nMasterIndex );
+	if (Pol.empty())
+		return;
 	const PointF* pptfStart = &Pol[0];
 	gr.DrawLines( &penHoriz, pptfStart, Pol.size() );
 }
@@ -1475,10 +1481,10 @@ void	CCameraView::ExtentSelectedEditState::SetMousePoint(PointF ptf)
 
 RectF  CCameraView::ExtentNewEditState::GetCurrentRect() const
 {
-	double	fLeft = std::_cpp_min( m_ptfStartMouse.X, m_ptfOldMouse.X ),
-			fTop = std::_cpp_min( m_ptfStartMouse.Y, m_ptfOldMouse.Y ),
-			fRight = std::_cpp_max( m_ptfStartMouse.X, m_ptfOldMouse.X ),
-			fBottom = std::_cpp_max( m_ptfStartMouse.Y, m_ptfOldMouse.Y );
+	double	fLeft = std::min( m_ptfStartMouse.X, m_ptfOldMouse.X ),
+			fTop = std::min( m_ptfStartMouse.Y, m_ptfOldMouse.Y ),
+			fRight = std::max( m_ptfStartMouse.X, m_ptfOldMouse.X ),
+			fBottom = std::max( m_ptfStartMouse.Y, m_ptfOldMouse.Y );
 	return RectF( fLeft, fTop, fRight - fLeft, fBottom - fTop );
 }
 
@@ -1514,8 +1520,8 @@ CCameraView::ExtentSelectedEditState::ExtentSelectedEditState
 
 void	CCameraView::ExtentSelectedEditState::UpdateRect()
 {
-	double	fLeft	= std::_cpp_min( m_ptfStatic.X, m_ptfDynamic.X ),
-			fTop	= std::_cpp_min( m_ptfStatic.Y, m_ptfDynamic.Y ),
+	double	fLeft	= std::min( m_ptfStatic.X, m_ptfDynamic.X ),
+			fTop	= std::min( m_ptfStatic.Y, m_ptfDynamic.Y ),
 			fWidth	= abs( m_ptfStatic.X - m_ptfDynamic.X ),
 			fHeight	= abs( m_ptfStatic.Y - m_ptfDynamic.Y );
 	m_EditRect = RectF( fLeft, fTop, fWidth, fHeight );
@@ -1524,7 +1530,7 @@ void	CCameraView::ExtentSelectedEditState::UpdateRect()
 void CCameraView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 {
 	// release pointer
-	m_EditorState.m_Edit = std::auto_ptr<ItemEditState>(0);
+	m_EditorState.m_Edit = std::unique_ptr<ItemEditState>();
 /*	if( m_EditorState.State == EditorState::EDIT )
 	{
 		Canc
@@ -1535,4 +1541,4 @@ void CCameraView::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 	CScrollView::OnUpdate( pSender, lHint, pHint );
 }
 
-void	SetMousePoint(PointF ptf);
+//void	SetMousePoint(PointF ptf);

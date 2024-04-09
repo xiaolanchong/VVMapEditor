@@ -18,8 +18,10 @@
 #include "Background.h"
 #include <string>
 #include <atlbase.h>
-#include <qedit.h>
-#include <streams.h>
+
+#include "../qedit.h"
+#include "../baseclasses/streams.h"
+
 #include "Exception.h"
 
 #include <vector>

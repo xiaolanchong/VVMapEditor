@@ -74,7 +74,7 @@ protected:
 	afx_msg void OnNcLButtonUp(UINT nHitTest, CPoint point);
 	afx_msg void OnNcLButtonDblClk(UINT nHitTest, CPoint point);
 	afx_msg void OnTimer(UINT nIDEvent);
-	afx_msg UINT OnNcHitTest(CPoint point);
+	afx_msg LRESULT OnNcHitTest(CPoint point);
 	afx_msg void OnCancelMode();
 	//}}AFX_MSG
 

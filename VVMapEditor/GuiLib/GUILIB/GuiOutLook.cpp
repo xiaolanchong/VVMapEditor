@@ -224,7 +224,7 @@ void CGuiOutLook::RecalLayout()
 	int iy=5+m_Avance; //a partir de esta posición se comienza a escribir
 	//calculo real del espacio que ocuparan los botones
 	CRect rcMsg;
-	for( iCont=0; iCont< m_iNumBotton;iCont++)
+	for( int iCont=0; iCont< m_iNumBotton;iCont++)
 	{
 		CItems* cit=(CItems*)m_ArrayButtons[iCont];
 		rect.left=iMitad;

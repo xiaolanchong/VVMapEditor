@@ -3,8 +3,11 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+#include <atomic>
 #include "RealtimeBackground.h"
+#ifdef DIRECTX
 #include <dxerr9.h>
+#endif
 #include "Helper.h"
 #include <vector>
 //#include "EditorState.h"
@@ -173,7 +176,12 @@ public:
 	{
 		if( hr != S_OK )
 		{
-			LPCTSTR str = DXGetErrorString9( hr );
+			CString str;
+#ifdef DIRECTX
+			str = DXGetErrorString9(hr);
+#else
+			str.Format(_T("HResult=0x%x"), hr);
+#endif
 			throw RecordException( Helper::ConvertA(str) );
 		}
 	}
@@ -292,46 +300,48 @@ CComPtr<IBaseFilter>	CRealtimeBackground::GetFilter(DWORD dwFourCC)
 	pMoniker.Release();
 	return pFilter;	
 }
-/*
-CComPtr<IBaseFilter>	CRealtimeBackground::GetFilter()
+
+// this dummy implementation is provided to avoid dependency on Elvees's camera translation software
+class CDummyImage: public CImage
 {
-	HRESULT hr;
-    CComQIPtr<ICreateDevEnum, &IID_ICreateDevEnum> pSysDevEnum ;
-    CComPtr<IEnumMoniker> pEnum;
-    CComPtr<IMoniker> pMoniker ;
-	CComPtr<IBaseFilter> pFilter;
+public:
+	virtual void AddRef() override
+	{
+		++m_ref;
+	}
+	virtual void Release() override
+	{ 
+		if (--m_ref)
+		{
+			delete this;
+		}
+	}
 
-	hr = pSysDevEnum.CoCreateInstance(CLSID_SystemDeviceEnum);
-    if (FAILED(hr))
-    {
-        // Handle the error.
-    }    
+	virtual void CreateCopy(CImage** ppImage) override 
+	{
+		*ppImage = new CDummyImage{};
+	}
+	virtual void GetImageInfo(BITMAPINFO* bmi) override
+	{
+		*bmi = {};
+		BITMAPINFOHEADER& header = bmi->bmiHeader;
+		header.biSize = sizeof(BITMAPINFOHEADER);
+		header.biWidth = 320;
+		header.biHeight = 240;
+		header.biBitCount = 24;
+		header.biCompression = 0;
+		header.biSizeImage = header.biWidth * header.biHeight * header.biBitCount / 3;
+	}
+	virtual void GetImageBytes(LPBYTE* bytes) override 
+	{
+		memset(bytes, 0, 320 * 240 * 3);
+	}
+private:
+	std::atomic<int> m_ref{1};
+};
 
-    hr = pSysDevEnum->CreateClassEnumerator(CLSID_VideoCompressorCategory, &pEnum, 0);
-    if (hr == S_OK)  // S_FALSE means nothing in this category.
-    {
-        while (S_OK == pEnum->Next(1, &pMoniker, NULL))
-        {
-            IPropertyBag *pPropBag = NULL;
-            pMoniker->BindToStorage(0, 0, IID_IPropertyBag, 
-                (void **)&pPropBag);
-            VARIANT var;
-            VariantInit(&var);
-            hr = pPropBag->Read(L"FriendlyName", &var, 0);
-            if (SUCCEEDED(hr) && !wcscmp(var.bstrVal , L"XviD MPEG-4 Codec"))
-            {
-				hr = pMoniker->BindToObject(NULL, NULL, IID_IBaseFilter, (void**)&pFilter.p);
-				if (SUCCEEDED(hr))
-				{
-					return CComPtr<IBaseFilter>(pFilter);
-				}
-
-            }   
-			pMoniker.Release();
-            VariantClear(&var); 
-        }
-    }
-
-	return CComPtr<IBaseFilter>();
-	
-}*/
+bool CreateImage(CImage** ppImage, int CamID)
+{
+	*ppImage = new CDummyImage{};
+	return true;
+}

@@ -54,7 +54,7 @@ protected: // create from serialization only
 		PointF	m_Point;
 		int		m_Number;
 
-		std::auto_ptr<CFigPolyline>	m_CurrentPoly;
+		std::unique_ptr<CFigPolyline>	m_CurrentPoly;
 		enum { ERR_POLY = -1};
 		int		m_nActivePoly;
 
@@ -139,7 +139,7 @@ protected: // create from serialization only
 	int					FindAnchorPointOnMap(CPoint point);
 	int					FindCorrPointOnMap( CPoint point );
 
-	std::auto_ptr<CBackground>	m_Background;
+	std::unique_ptr<CBackground>	m_Background;
 
 	HCURSOR		m_hCross;
 

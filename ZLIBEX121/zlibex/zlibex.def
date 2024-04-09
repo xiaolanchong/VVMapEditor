@@ -1,0 +1,102 @@
+LIBRARY
+; zlib data compression library
+
+EXPORTS
+; basic functions
+    zlibVersion
+    deflate
+    deflateEnd
+    inflate
+    inflateEnd
+; advanced functions
+    deflateSetDictionary
+    deflateCopy
+    deflateReset
+    deflateParams
+    deflateBound
+    deflatePrime
+    inflateSetDictionary
+    inflateSync
+    inflateCopy
+    inflateReset
+    inflateBack
+    inflateBackEnd
+    zlibCompileFlags
+; utility functions
+    compress
+    compress2
+    compressBound
+    uncompress
+    gzopen
+    gzdopen
+    gzsetparams
+    gzread
+    gzwrite
+    gzprintf
+    gzputs
+    gzgets
+    gzputc
+    gzgetc
+    gzungetc
+    gzflush
+    gzseek
+    gzrewind
+    gztell
+    gzeof
+    gzclose
+    gzerror
+    gzclearerr
+; checksum functions
+    adler32
+    crc32
+; various hacks, don't look :)
+    deflateInit_
+    deflateInit2_
+    inflateInit_
+    inflateInit2_
+    inflateBackInit_
+    inflateSyncPoint
+    get_crc_table
+    zError
+
+;//NOTENOTE: 10/09/2004 additional functions for zip/unzip stuff
+	
+	zipOpen
+	zipOpen2
+	zipOpenNewFileInZip
+	zipOpenNewFileInZip2
+	zipOpenNewFileInZip3
+	zipWriteInFileInZip
+	zipCloseFileInZip
+	zipCloseFileInZipRaw
+	zipClose
+
+	unzStringFileNameCompare
+	unzOpen
+	unzOpen2
+	unzGetGlobalInfo
+	unzGetGlobalComment
+	unzClose
+	unzGoToFirstFile
+	unzGoToNextFile
+	unzLocateFile
+	unzGetCurrentFileInfo
+	unzOpenCurrentFile
+	unzOpenCurrentFilePassword
+	unzOpenCurrentFile2
+	unzOpenCurrentFile3
+	unzCloseCurrentFile
+	unzReadCurrentFile
+	unztell
+	unzeof
+	unzGetLocalExtrafield
+
+	fill_win32_filefunc
+
+;	create_mem_write_filefunc
+;	create_mem_read_filefunc
+;	destroy_mem_filefunc
+;	get_mem_buffer_size
+;	get_mem_buffer_ptr
+
+	CreateOnStream

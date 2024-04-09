@@ -1385,7 +1385,7 @@ void CGuiControlBar::OnPaint()
 }
 
 
-UINT CGuiControlBar::OnNcHitTest(CPoint point)
+LRESULT CGuiControlBar::OnNcHitTest(CPoint point)
 {
 	CRect rcWindow;
 	//no se convierte las coordenadas de pantalla porque el punto

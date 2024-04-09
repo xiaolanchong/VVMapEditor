@@ -146,7 +146,7 @@ BOOL CLoadIDDialog::OnInitDialog()
 	}
 	str.back() = _T("New");
 
-	for(  i=0; i< m_Need.size(); ++i)
+	for( size_t i=0; i< m_Need.size(); ++i)
 	{
 		CString Name;
 		Name.Format(_T("%d"), m_Need[i]);

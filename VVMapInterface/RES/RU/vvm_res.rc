@@ -1,0 +1,255 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "..\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "..\\resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,4,1,0
+ PRODUCTVERSION 3,1,7,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "ELVEES\0"
+            VALUE "FileDescription", "VVMInterface\0"
+            VALUE "FileVersion", "3, 4, 1, 0\0"
+            VALUE "InternalName", "VVMInterface\0"
+            VALUE "LegalCopyright", "Copyright © ElVEES, 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "VVMInterface.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ELVEES VVMInterface\0"
+            VALUE "ProductVersion", "3, 1, 7, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS_DLG DIALOG DISCARDABLE  0, 0, 426, 215
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VVMInterface options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,307,194,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,369,194,50,14
+    CONTROL         "Use &adaptive transitions",IDC_USESUPER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,28,92,9
+    EDITTEXT        IDC_EDIT_BASIS,60,41,40,14,ES_AUTOHSCROLL
+    CONTROL         "Use basis #",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,14,41,42,14
+    LTEXT           "Use maximum",IDC_STATIC,113,40,44,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_FUNCTIONS,159,40,40,14,ES_AUTOHSCROLL
+    LTEXT           "functions",IDC_STATIC,201,40,30,14,SS_CENTERIMAGE
+    LTEXT           "Points per function:",IDC_STATIC,258,42,62,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_PPF,330,42,40,14,ES_AUTOHSCROLL
+    CONTROL         "use 3D align",IDC_3DALIGN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,162,192,93,10
+    GROUPBOX        "",IDC_STATIC,7,18,412,65
+    CONTROL         "do adjustment",IDC_DO_ADJ,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,70,83,9
+    CONTROL         "Use projective transitions",IDC_USE_PROJECTIVE,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,7,7,186,10
+    CONTROL         "Use neural",IDC_USE_NEURAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,7,145,149,11
+    GROUPBOX        "",IDC_STATIC,7,158,412,28
+    EDITTEXT        IDC_EDIT1,103,168,116,13,ES_AUTOHSCROLL
+    LTEXT           "adjustment radius (px)",IDC_STATIC,105,68,72,9
+    EDITTEXT        IDC_ADJ_RAD,181,67,62,11,ES_AUTOHSCROLL
+    CONTROL         "Use distance weight transitions",IDC_WEIGHT_TRANS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,89,125,10
+    CONTROL         "Use this transition only  inside internal poligon",
+                    IDC_WT_INSIDE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,
+                    88,184,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OPTIONS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 419
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERR_OK_ID               "Operation completed successfully"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ERR_OUT_OF_MEMORY_ID    "Out of memory"
+    ID_ERR_NOT_IMPLEMENTED  "Not yet implemented"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ERR_TOO_MANY_OBJECTS "Too many objects on master"
+    ID_ERR_CANNOT_ALLOCATE  "Cannot allocate memory - bad size?"
+    ID_ERR_WRONG_SP         "No support point with this number"
+    ID_ERR_BAD_SCALE        "Invalid scale - must be >0"
+    ID_ERR_COORDS_UNDEFINABLE "Unable to calculate coords"
+    ID_ERR_WRONG_ZONE       "No invisible zone with this number"
+    ID_ERR_POINT_INVISIBLE  "Point translates to invisible zone - coordinates adjusted"
+    ID_ERR_SP_NOT_VISIBLE   "This error never occures"
+    ID_ERR_MAP_NOT_ALIGNED  "No map align is defined - run MapAlign()"
+    ID_ERR_WRONG_RP         "No reference point with this number"
+    ID_ERR_COLORS_NOT_SET   "Colors for map processing not set"
+    ID_ERR_NOT_PROCESSED    "Map bitmap is not processed - run ProcessMapBitmap() or Compile()"
+    ID_ERR_MAP_NOT_COMPILED "Visibility map not compiled - run Compile()"
+    ID_ERR_CANNOT_ALIGN     "Unable to align map - need at least 3 points"
+    ID_ERR_EXCEPTION_OCCURED 
+                            "An exception occured when trying to access an array."
+    ID_ERR_CRITSECTION_OCCUPIED "Other thread performs its computings"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ERR_HORIZONT_NOT_FOUND "The line where L<0 is not visible"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ERR_INVALID_MASTERS  "Invalid number of masters"
+    ID_ERR_BAD_ADDRESS      "NULL argument supplied"
+    ID_ERR_INVALID_INDEX    "No master with this index"
+    ID_ERR_INVALID_BITMAP   "Invalid bitmap format - 24 or 32 bpp required"
+    ID_ERR_INVALID_SIZE     "Point list size negative"
+    ID_ERR_MASTERS_UNDEFINED "Set number of masters first"
+    ID_ERR_MERGE_DONT_MATCH "Merging bitmaps don't match"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_ERR_MERGE_UNABLE     "Unable to merge bitmaps automatically"
+    ID_ERR_NO_MERGE         "These bitmaps are not merged"
+    ID_ERR_TRANSITION_UNDEFINED "No transition defined for these masters"
+    ID_ERR_NO_POINTS        "Point list not set"
+    ID_ERR_INVALID_FORMAT   "Unable to load file"
+    ID_ERR_NO_LIST          "Extents list not set"
+    ID_ERR_COMPILE_ERROR    "Error compiling extent table - division by zero"
+    ID_ERR_BITMAPINFO_REQUIRED "This operation requires picture sizes"
+    ID_ERR_BITMAP_REQUIRED  "This operation requires bitmap"
+    ID_ERR_TABLE_UNDEFINED  "Extents table undefined - run Compile()"
+    ID_ERR_ID_NOT_PRESENT   "No master with this ID"
+    ID_ERR_NO_PROCESS_RUNNING "There's no process running that can be stopped"
+    ID_ERR_PROCESS_STOPPED  "Process stopped by user"
+    ID_ERR_WRONG_OPTION     "Options specified do not allow calling this function"
+    ID_ERR_INVALID_RECT     "Invalid rectangle in extents list"
+    ID_ERR_TRANSITION_INFINITY "This point corresponds to infinity"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ERROR               "Error"
+    IDS_BAD_BASIS           "Bad basis #"
+    IDS_NO_BASIS            "No basis with this number"
+    IDS_BAD_FUNCTION        "Bad # of functions"
+    IDS_NEED_POINT          "Need at least 1 point per function"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,282 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "..\resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "..\\resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,4,2,0
+ PRODUCTVERSION 3,1,7,5
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "ELVEES"
+            VALUE "FileDescription", "VVMInterface"
+            VALUE "FileVersion", "3, 4, 2, 0"
+            VALUE "InternalName", "VVMInterface"
+            VALUE "LegalCopyright", "Copyright © ElVEES, 2004"
+            VALUE "OriginalFilename", "VVMInterface.dll"
+            VALUE "ProductName", "ELVEES VVMInterface"
+            VALUE "ProductVersion", "3, 1, 7, 30"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS_DLG DIALOG  0, 0, 398, 287
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "VVMInterface options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,266,122,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,266,42,14
+    CONTROL         "Use &adaptive transitions",IDC_USESUPER,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,143,55,92,9
+    LTEXT           "Use maximum",IDC_STATIC,255,50,44,14,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_FUNCTIONS,343,50,40,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "functions",IDC_STATIC,305,50,30,14,SS_CENTERIMAGE
+    GROUPBOX        "Projective transition",IDC_STATIC,136,20,254,68
+    CONTROL         "Enabled",IDC_USE_NEURAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,144,126,86,11
+    LISTBOX         IDC_TRANS_LIST,7,7,122,217,LBS_NOINTEGRALHEIGHT | 
+                    LBS_EXTENDEDSEL | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Neural network transition",IDC_STATIC,136,114,254,44
+    CONTROL         "show transition log window",IDC_LOG_WINDOW,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_TABSTOP,250,242,121,12
+    CONTROL         "Enabled",IDC_PROJ_ENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,143,34,129,10
+    EDITTEXT        IDC_NEURAL_FORMULA,175,141,69,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "formula",IDC_STATIC,145,143,27,10
+    EDITTEXT        IDC_NEUR_ITER_NUM,326,141,53,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Number of iterations",IDC_STATIC,257,143,68,9
+    GROUPBOX        "Triangulation transition",IDC_STATIC,136,183,254,27
+    CONTROL         "Enabled",IDC_TRIANG_ENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,144,193,111,11
+    LTEXT           "Transitions settings",IDC_STATIC_ROOT,136,7,125,10,
+                    WS_DISABLED
+    GROUPBOX        "Other options",IDC_STATIC,7,234,383,27
+    CONTROL         "enable vismap",IDC_VISMAP_ENABLED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,246,70,11
+    CONTROL         "enable the polygons of visibility",IDC_VISPOLY_ENABLED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,95,247,120,11
+    LTEXT           "Static",IDC_DIALOG_CAPTION,304,7,68,10,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    LTEXT           "Points per function:",IDC_STATIC,278,70,62,14,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT_PPF,344,70,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_EDIT_BASIS,210,68,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Use basis #",IDC_STATIC,"Static",SS_LEFTNOWORDWRAP | 
+                    SS_CENTERIMAGE | WS_GROUP,142,70,42,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPTIONS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 390
+        VERTGUIDE, 136
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 280
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ERR_OK_ID               "Operation completed successfully"
+    IDS_MASTER              "Master"
+    IDS_MAP                 "Map"
+    IDS_UNKNOWN             "unknown"
+    IDS_OPTIONS_CAPTION1    "Transitions settings"
+    IDS_MUST_BE             "must be"
+    IDS_WARNING             "!! Achtung !!"
+    IDS_LESS_THAN           "less than"
+    IDS_MUST_BE_LESS_THEN   "must be less than"
+    IDS_NUM_OF_ITER         "Too great number of iterations. it should be less then "
+    IDS_WRONG_FORMULA       "Neural net formula is incorrect. The formula must be a set of positive numbers for example "" 2 3 3 2 ""."
+    IDS_WRONG_BASIS         "No basis with this number. it must be 0 <= n < 4"
+    IDS_MAX_NUM_FUNCTIONS   "It must be 0 <= n < 20"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ERR_HORIZONT_NOT_FOUND "The line where L<0 is not visible"
+    ID_ERR_INVALID_MASTERS  "invalid master"
+    ID_ERR_INVALID_ARGUMENT "The function got an invalid argument"
+    ID_ERR_FILE_NOT_FOUND_IN_ZIP "Can't find the file in zip archive"
+    ID_ERR_POINT_OUT_OF_RECT 
+                            "The result point has occured out of the image area"
+    ID_ERR_POINT_OUT_OF_RECT_SRC "The source point is out of the image area"
+    ID_ERR_POINT_INVISIBLE_SRC 
+                            "The soutce point on the map is inside invisible area"
+    ID_ERR_UNKNOWN          "unknow error"
+END
+
+STRINGTABLE 
+BEGIN
+    ERR_OUT_OF_MEMORY_ID    "Out of memory"
+    ID_ERR_NOT_IMPLEMENTED  "Not yet implemented"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ERR_TOO_MANY_OBJECTS "Too many objects on master"
+    ID_ERR_CANNOT_ALLOCATE  "Cannot allocate memory - bad size?"
+    ID_ERR_WRONG_SP         "No support point with this number"
+    ID_ERR_BAD_SCALE        "Invalid scale - must be >0"
+    ID_ERR_COORDS_UNDEFINABLE "Unable to calculate coords"
+    ID_ERR_WRONG_ZONE       "No invisible zone with this number"
+    ID_ERR_POINT_INVISIBLE  "Point translates to invisible zone - coordinates adjusted"
+    ID_ERR_SP_NOT_VISIBLE   "This error never occures"
+    ID_ERR_MAP_NOT_ALIGNED  "No map align is defined - run MapAlign()"
+    ID_ERR_WRONG_RP         "No reference point with this number"
+    ID_ERR_COLORS_NOT_SET   "Colors for map processing not set"
+    ID_ERR_NOT_PROCESSED    "Map bitmap is not processed - run ProcessMapBitmap() or Compile()"
+    ID_ERR_MAP_NOT_COMPILED "Visibility map not compiled - run Compile()"
+    ID_ERR_CANNOT_ALIGN     "Unable to align map - need at least 3 points"
+    ID_ERR_EXCEPTION_OCCURED 
+                            "An exception occured when trying to access an array."
+    ID_ERR_CRITSECTION_OCCUPIED "Other thread performs its computings"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ERR_OUT_OF_MEMORY    "not enough of memory"
+    ID_ERR_BAD_ADDRESS      "NULL argument supplied"
+    ID_ERR_INVALID_INDEX    "No master with this index"
+    ID_ERR_INVALID_BITMAP   "Invalid bitmap format - 24 or 32 bpp required"
+    ID_ERR_INVALID_SIZE     "Point list size negative"
+    ID_ERR_MASTERS_UNDEFINED "Set number of masters first"
+    ID_ERR_MERGE_DONT_MATCH "Merging bitmaps don't match"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ERR_MERGE_UNABLE     "Unable to merge bitmaps automatically"
+    ID_ERR_NO_MERGE         "These bitmaps are not merged"
+    ID_ERR_TRANSITION_UNDEFINED "No transition defined for these masters"
+    ID_ERR_NO_POINTS        "Point list not set"
+    ID_ERR_INVALID_FORMAT   "Unable to load file"
+    ID_ERR_NO_LIST          "Extents list not set"
+    ID_ERR_COMPILE_ERROR    "Error compiling extent table - division by zero"
+    ID_ERR_BITMAPINFO_REQUIRED "This operation requires picture sizes"
+    ID_ERR_BITMAP_REQUIRED  "This operation requires bitmap"
+    ID_ERR_TABLE_UNDEFINED  "Extents table undefined - run Compile()"
+    ID_ERR_ID_NOT_PRESENT   "No master with this ID"
+    ID_ERR_NO_PROCESS_RUNNING "There's no process running that can be stopped"
+    ID_ERR_PROCESS_STOPPED  "Process stopped by user."
+    ID_ERR_WRONG_OPTION     "Options specified do not allow calling this function"
+    ID_ERR_INVALID_RECT     "Invalid rectangle in extents list"
+    ID_ERR_TRANSITION_INFINITY "This point corresponds to infinity"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR               "Error"
+    IDS_BAD_BASIS           "Bad basis #"
+    IDS_NO_BASIS            "No basis with this number"
+    IDS_BAD_FUNCTION        "Bad # of functions"
+    IDS_NEED_POINT          "Need at least 1 point per function"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

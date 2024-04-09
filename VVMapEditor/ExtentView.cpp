@@ -99,7 +99,7 @@ void	CExtentView::Update()
 	const Array<long>& Arr = pDoc->m_ExtentTable[m_Index];
 	if( !Arr.empty() )
 	{
-		m_Bitmap = Helper::auto_ptr<Bitmap>(::new Bitmap( Arr.GetX(), Arr.GetY(), PixelFormat32bppARGB ));
+		m_Bitmap = std::unique_ptr<Bitmap>(new Bitmap( Arr.GetX(), Arr.GetY(), PixelFormat32bppARGB ));
 
 /*		Graphics gr( m_Bitmap.get() );
 		gr.Clear( Color::Red );*/
@@ -110,8 +110,8 @@ void	CExtentView::Update()
 		for( int k = 0; k < Arr.GetX(); ++k )
 			for( int l = 0; l < Arr.GetY(); ++l )
 			{
-				Max = std::_cpp_max<long>( Max, Arr( k, l ) );
-				Min = std::_cpp_min<long>( Min, Arr( k, l ) );
+				Max = (std::max<long>)( Max, Arr( k, l ) );
+				Min = (std::min<long>)( Min, Arr( k, l ) );
 			}
 
 		BitmapData BmpData;
@@ -141,8 +141,8 @@ void	CExtentView::Update()
 			for(int j = 0; j < size.cx; ++j)
 			{
 				float Hue = (( Arr( j, i ) - Min ) * 300.0f)/ Diff;
-				Hue = std::_cpp_min( 300.0f, Hue );
-				Hue = std::_cpp_max( 0.0f, Hue );
+				Hue = (std::min)( 300.0f, Hue );
+				Hue = (std::max)( 0.0f, Hue );
 				cl.SetHue(Hue);
 				COLORREF cr = cl;
 				BmpArr(j, i) = Color( GetRValue(cr), GetGValue(cr), GetBValue(cr))  ;

@@ -167,7 +167,8 @@ DWORD	CColorSettings::GetDefColor( int Number) const
 		Color::LightSalmon,
 		Color::DimGray
 	};*/
-	static Colors[]=
+	using Gdiplus::Color;
+	static DWORD Colors[]=
 	{
 		Color::DarkRed,
 		Color::DarkGreen,

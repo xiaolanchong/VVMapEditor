@@ -60,7 +60,7 @@ private:
 	// Hide the copy constructor and operator =
 	CInPlaceCombo (CInPlaceCombo&) {}
 
-	operator = (CInPlaceCombo) {}
+	CInPlaceCombo& operator = (CInPlaceCombo) {}
 
 	// Destructor
 	virtual ~CInPlaceCombo();

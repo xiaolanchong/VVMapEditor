@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Debug|Win32">
+      <Configuration>Unicode Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Unicode Release|Win32">
+      <Configuration>Unicode Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>VVMapInterface</ProjectName>
+    <ProjectGuid>{0B7C220F-2C7C-44DE-8FD1-A13A810121F5}</ProjectGuid>
+    <RootNamespace>VVMapInterface</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.34322.80</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\Release\</OutDir>
+    <IntDir>.\Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <OutDir>.\VVMapInterface___Win32_Unicode_Release\</OutDir>
+    <IntDir>.\VVMapInterface___Win32_Unicode_Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\Debug\</OutDir>
+    <IntDir>.\Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <OutDir>.\VVMapInterface___Win32_Unicode_Debug\</OutDir>
+    <IntDir>.\VVMapInterface___Win32_Unicode_Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/VVMapInterface.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../../../../../../PSDK2006Mar/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderOutputFile>.\Release/VVMapInterface.pch</PrecompiledHeaderOutputFile>
+      <AssemblerOutput>All</AssemblerOutput>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0419</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Release/VVMInterface.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../../PSDK2006Mar/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\VVMInterface.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Release/VVMInterface.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x11100000</BaseAddress>
+      <ImportLibrary>.\Release/VVMInterface.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Release|Win32'">
+    <CustomBuildStep>
+      <Command>copy $(TargetPath) ..\..\..\BIN\Release\$(TargetFileName)
+</Command>
+      <Outputs>..\..\..\BIN\Release\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\VVMapInterface___Win32_Unicode_Release/VVMapInterface.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>../../../../../../PSDK2006Mar/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderOutputFile>.\VVMapInterface___Win32_Unicode_Release/VVMapInterface.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\VVMapInterface___Win32_Unicode_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\VVMapInterface___Win32_Unicode_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\VVMapInterface___Win32_Unicode_Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>VVMapInterface___Win32_Unicode_Release/VVMInterface.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../../PSDK2006Mar/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\VVMInterface.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\VVMapInterface___Win32_Unicode_Release/VVMInterface.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <BaseAddress>0x11100000</BaseAddress>
+      <ImportLibrary>.\VVMapInterface___Win32_Unicode_Release/VVMInterface.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/VVMapInterface.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../../../PSDK2006Mar/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderOutputFile>.\Debug/VVMapInterface.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0419</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Debug/VVMInterface.dll</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../../PSDK2006Mar/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\VVMInterface.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/VVMInterface.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>.\Debug/VVMInterface.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">
+    <CustomBuildStep>
+      <Command>copy $(TargetPath) ..\..\..\BIN\Debug\$(TargetFileName)
+</Command>
+      <Outputs>..\..\..\BIN\Debug\$(TargetFileName);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\VVMapInterface___Win32_Unicode_Debug/VVMapInterface.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../../../PSDK2006Mar/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <PrecompiledHeaderOutputFile>.\VVMapInterface___Win32_Unicode_Debug/VVMapInterface.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\VVMapInterface___Win32_Unicode_Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\VVMapInterface___Win32_Unicode_Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\VVMapInterface___Win32_Unicode_Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0419</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>VVMapInterface___Win32_Unicode_Debug/$(TargetFileName)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>../../../../../../PSDK2006Mar/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>.\VVMInterface.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\VVMapInterface___Win32_Unicode_Debug/VVMInterface.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>.\VVMapInterface___Win32_Unicode_Debug/VVMInterface.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SRS\SourceLibrary\NeuralNet.cpp" />
+    <ClCompile Include="all_transes.cpp" />
+    <ClCompile Include="arithmetic.cpp" />
+    <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="BufferInput.cpp" />
+    <ClCompile Include="CVVMReal_sp.cpp" />
+    <ClCompile Include="CVVReal_TransPoly.cpp" />
+    <ClCompile Include="dib.cpp" />
+    <ClCompile Include="dll.cpp" />
+    <ClCompile Include="extents.cpp" />
+    <ClCompile Include="get_same_obj.cpp" />
+    <ClCompile Include="invis_zones.cpp" />
+    <ClCompile Include="Masters.cpp" />
+    <ClCompile Include="MemStream.cpp" />
+    <ClCompile Include="MemStream_NS.cpp" />
+    <ClCompile Include="my_win.cpp" />
+    <ClCompile Include="neural_trans.cpp" />
+    <ClCompile Include="opts.cpp" />
+    <ClCompile Include="OverlapInfo.cpp" />
+    <ClCompile Include="points.cpp" />
+    <ClCompile Include="poly.cpp" />
+    <ClCompile Include="projective_trans.cpp" />
+    <ClCompile Include="ser.cpp" />
+    <ClCompile Include="SerializeHelper.cpp" />
+    <ClCompile Include="solver.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SuperTransition.cpp" />
+    <ClCompile Include="supp_points.cpp" />
+    <ClCompile Include="sys.cpp" />
+    <ClCompile Include="sys2.cpp" />
+    <ClCompile Include="sys3.cpp" />
+    <ClCompile Include="trans.cpp" />
+    <ClCompile Include="TransitionCalculator.cpp" />
+    <ClCompile Include="trans_fab.cpp" />
+    <ClCompile Include="triang.cpp" />
+    <ClCompile Include="triangulation.cpp" />
+    <ClCompile Include="VVMap.cpp" />
+    <ClCompile Include="VVMOptions.cpp" />
+    <ClCompile Include="VVMReal1.cpp" />
+    <ClCompile Include="VVMReal2.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="VVMReal3.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="VVMRealisation.cpp" />
+    <ClCompile Include="VVMReal_gso.cpp" />
+    <ClCompile Include="VVMReal_iz.cpp" />
+    <ClCompile Include="VVMReal_old_load.cpp" />
+    <ClCompile Include="zipper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VVMapInterface.ver" />
+    <None Include="VVMInterface.def" />
+    <None Include="xmllite.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Res\En\vvm_res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\trunk\Sourcelibrary\NeuralNet.h" />
+    <ClInclude Include="all_transes.h" />
+    <ClInclude Include="arithmetic.h" />
+    <ClInclude Include="Buffer.h" />
+    <ClInclude Include="BufferInput.h" />
+    <ClInclude Include="context.h" />
+    <ClInclude Include="CrtMalloc.h" />
+    <ClInclude Include="dib.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="extents.h" />
+    <ClInclude Include="fractions.h" />
+    <ClInclude Include="frames.h" />
+    <ClInclude Include="get_same_obj.h" />
+    <ClInclude Include="horiz.h" />
+    <ClInclude Include="invis_zones.h" />
+    <ClInclude Include="kpoint.h" />
+    <ClInclude Include="kpoint_ser.h" />
+    <ClInclude Include="Masters.h" />
+    <ClInclude Include="memleak.h" />
+    <ClInclude Include="MemStream.h" />
+    <ClInclude Include="MemStream_NS.h" />
+    <ClInclude Include="ModuleVersion.h" />
+    <ClInclude Include="my_canvas.h" />
+    <ClInclude Include="my_math.h" />
+    <ClInclude Include="my_win.h" />
+    <ClInclude Include="neural_trans.h" />
+    <ClInclude Include="old_classes.h" />
+    <ClInclude Include="opts_base.h" />
+    <ClInclude Include="OverlapInfo.h" />
+    <ClInclude Include="points.h" />
+    <ClInclude Include="poly.h" />
+    <ClInclude Include="projective_trans.h" />
+    <ClInclude Include="SerializeHelper.h" />
+    <ClInclude Include="serializer3.h" />
+    <ClInclude Include="solver.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SuperTransition.h" />
+    <ClInclude Include="supp_points.h" />
+    <ClInclude Include="sys.h" />
+    <ClInclude Include="thread_safe_global.h" />
+    <ClInclude Include="trans.h" />
+    <ClInclude Include="TransitionCalculator.h" />
+    <ClInclude Include="trans_matr.h" />
+    <ClInclude Include="triang.h" />
+    <ClInclude Include="triangulation.h" />
+    <ClInclude Include="triang_trans.h" />
+    <ClInclude Include="tstring.h" />
+    <ClInclude Include="VVMap.h" />
+    <ClInclude Include="VVMErrors.h" />
+    <ClInclude Include="VVMInterface.h" />
+    <ClInclude Include="VVMReal1.h" />
+    <ClInclude Include="VVMRealisation.h" />
+    <ClInclude Include="VVMSettings.h" />
+    <ClInclude Include="win_canvas.h" />
+    <ClInclude Include="xmllite.h" />
+    <ClInclude Include="zipper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zlibex121\zlibex\zlibex80.vcxproj">
+      <Project>{9b7f809f-cee1-40bf-9c32-b02cbc339fc9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

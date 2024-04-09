@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{f9c1f1bb-8319-4817-a533-aa5988d2e4eb}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def</Extensions>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{0a8a2d55-018b-476d-b637-628d27d64056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{70306068-a8a2-4d86-bcac-035d6241dc5a}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="all_transes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="arithmetic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CVVMReal_sp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CVVReal_TransPoly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="extents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="get_same_obj.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="invis_zones.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Masters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MemStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MemStream_NS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="my_win.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="neural_trans.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="opts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OverlapInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="points.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="poly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="projective_trans.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializeHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="solver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperTransition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="supp_points.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sys.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sys2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sys3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trans.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trans_fab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransitionCalculator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triang.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="triangulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMOptions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMReal1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMReal2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMReal3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMReal_gso.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMReal_iz.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMReal_old_load.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VVMRealisation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zipper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SRS\SourceLibrary\NeuralNet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VVMInterface.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="xmllite.inl">
+      <Filter>Header files</Filter>
+    </None>
+    <None Include="VVMapInterface.ver" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Res\En\vvm_res.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="all_transes.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="arithmetic.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Buffer.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferInput.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="context.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrtMalloc.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="dib.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="extents.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="fractions.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="frames.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="get_same_obj.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="horiz.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="invis_zones.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="kpoint.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="kpoint_ser.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Masters.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="memleak.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemStream.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="MemStream_NS.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleVersion.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="my_canvas.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="my_math.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="my_win.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="neural_trans.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\trunk\Sourcelibrary\NeuralNet.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="old_classes.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="opts_base.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="OverlapInfo.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="points.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="poly.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="projective_trans.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializeHelper.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="serializer3.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="solver.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperTransition.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="supp_points.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="sys.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="thread_safe_global.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="trans.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="trans_matr.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransitionCalculator.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="triang.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="triang_trans.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="triangulation.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="tstring.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VVMap.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VVMErrors.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VVMInterface.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VVMReal1.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VVMRealisation.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="VVMSettings.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="win_canvas.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="xmllite.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="zipper.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

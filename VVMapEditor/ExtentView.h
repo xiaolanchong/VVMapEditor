@@ -7,6 +7,7 @@
 // ExtentView.h : header file
 //
 
+#include <memory>
 #include "Helper.h"
 #include "CacheDC.h"
 
@@ -17,7 +18,7 @@ class CVVMapEditorDoc;
 
 class CExtentView : public CScrollView
 {
-	Helper::auto_ptr<Bitmap>		m_Bitmap;
+	std::unique_ptr<Bitmap>		m_Bitmap;
 protected:
 	CExtentView();           // protected constructor used by dynamic creation
 	DECLARE_DYNCREATE(CExtentView)

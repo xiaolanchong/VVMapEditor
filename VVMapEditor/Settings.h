@@ -195,8 +195,10 @@ public:
 	std::vector<int>	GetMasterStubList() const { return m_MasterStub.GetMasterStubList(); }
 
 	//NOTENOTE: 
-	DWORD	GetProperty( DWORD	dwNumber) const throw( NoSuchOptionException );
-	void	SetProperty( DWORD	dwNumber, DWORD dwColor) throw( NoSuchOptionException );
+	/// @throw( NoSuchOptionException )
+	DWORD	GetProperty( DWORD	dwNumber) const;
+	/// @throw( NoSuchOptionException )
+	void	SetProperty( DWORD	dwNumber, DWORD dwColor);
 
 	void	Transact();
 	void	Rollback();

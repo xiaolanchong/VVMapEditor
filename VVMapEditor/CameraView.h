@@ -103,7 +103,7 @@ private:
 		ExtentNewEditState(PointF ptf):ExtentEditState(ptf), m_ptfStartMouse(ptf){}
 	};	
 
-	std::auto_ptr<CBackground>	m_Background;
+	std::unique_ptr<CBackground>	m_Background;
 	bool						m_bStretch;
 
 	std::vector<CRect>			m_Rects;
@@ -118,7 +118,7 @@ private:
 			EDIT
 		};
 		State	m_State;
-		std::auto_ptr<ItemEditState> m_Edit;
+		std::unique_ptr<ItemEditState> m_Edit;
 /*		PointF	m_MousePoint;
 		PointF	m_RectPoint[2];
 		int		m_ExtNumber;

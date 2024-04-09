@@ -10,7 +10,22 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#include <winsdkver.h>
+
 #define VC_EXTRALEAN		// Exclude rarely-used stuff from Windows headers
+
+#ifndef WINVER				// Allow use of features specific to Windows 95 and Windows NT 4 or later.
+#define WINVER _WIN32_MAXVER		// Change this to the appropriate value to target Windows 98 and Windows 2000 or later.
+#endif
+
+#ifndef _WIN32_WINNT		// Allow use of features specific to Windows NT 4 or later.
+#define _WIN32_WINNT _WIN32_WINNT_MAXVER	// Change this to the appropriate value to target Windows 2000 or later.
+#endif
+
+#include <vector>
+#include <list>
+#include <algorithm>
+#include <memory>
 
 #include <afxwin.h>         // MFC core and standard components
 #include <afxext.h>         // MFC extensions
@@ -44,7 +59,7 @@ using namespace Gdiplus;
 #ifdef ORWELL_DB
 #include "../../DBBridge/trunk/DBBridge.h"
 #endif
-#include "../../SRS/VVMapInterface/trunk/VVMInterface.h"
+#include "../VVMapInterface/VVMInterface.h"
 #ifdef ORWELL_CAM
 #include "../../Mapimg/trunk/mapimg.h"
 #endif

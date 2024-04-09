@@ -1,0 +1,13 @@
+ZlibEx.dll
+
+Eugene Gorbachev note:
+Это расширение библиотеки zlib.dll версии 1.2.1 ( www.gzip.org/zlib ).
++ Файлы раскинуты по нужным каталогам + добавлено в длл zip/unzip расширение из папка contrib оригинального дистриба
++ Добавлено расширение работы с IStream /ф-я CreateOnStream,  файлы iomem.h & ziplib/iomem.c /
+
+[+] Features
+[*] Bugs
+[-] Known bugs
+
+1.2.1	10/11/04 - changlelog starts 
+		скоро добавлю создание потока на IMalloc и спп враппер над zip/unzip api

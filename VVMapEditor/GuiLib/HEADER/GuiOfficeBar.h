@@ -68,7 +68,7 @@ DECLARE_MESSAGE_MAP()
 	afx_msg void OnNcLButtonUp(UINT nHitTest, CPoint point);
 	afx_msg void OnTimer(UINT nIDEvent);
 	afx_msg void OnNcMouseMove(UINT nHitTest, CPoint point);
-	afx_msg UINT OnNcHitTest(CPoint point);
+	afx_msg LRESULT OnNcHitTest(CPoint point);
 	afx_msg void OnNcCalcSize(BOOL, NCCALCSIZE_PARAMS*);
 
 };

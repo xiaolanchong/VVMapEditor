@@ -30,8 +30,6 @@
 #pragma warning(disable : 4514)
 #pragma warning(disable : 4201)
 
-#define _WIN32_WINDOWS 0x0500	// for IsDebuggerPresent
-
 // if you don't use PCH comment a string below
 #include "stdafx.h"
 
@@ -79,6 +77,7 @@ static TCHAR * lstrrchr(LPCTSTR string, int ch)
 #define FILENAME_SEPARATOR_1	_T('\\')
 #define FILENAME_SEPARATOR_2	_T('/')
 
+#if WINVER < 0x0500
 STDAPI_(LPTSTR) PathFindExtension(LPCTSTR pszPath)
 {
     LPCTSTR pszDot = NULL;
@@ -105,6 +104,7 @@ STDAPI_(LPTSTR) PathFindExtension(LPCTSTR pszPath)
     // ptr to end of the string (NULL extension) (cast->non const)
     return pszDot ? (LPTSTR)pszDot : (LPTSTR)pszPath;
 }
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////
 // DumpMiniDump

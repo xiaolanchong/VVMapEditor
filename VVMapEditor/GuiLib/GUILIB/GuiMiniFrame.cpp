@@ -411,7 +411,7 @@ void CGuiMiniFrame::OnTimer(UINT nIDEvent)
 	CMiniDockFrameWnd::OnTimer(nIDEvent);
 }
 
-UINT CGuiMiniFrame::OnNcHitTest(CPoint point)
+LRESULT CGuiMiniFrame::OnNcHitTest(CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 	CRect rcWindow;

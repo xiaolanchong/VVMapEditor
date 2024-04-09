@@ -1,2 +1,17 @@
 /VVMapEditor/.vs
 /VVMapEditor/GuiLib/GUILIB/Debug/
+/baseclasses/Debug/
+/baseclasses/Release
+/baseclasses/x64/
+/bin/
+/VVMapEditor/Unicode_Debug
+/VVMapEditor/bin/
+/VVMapInterface/VVMapInterface___Win32_Unicode_Debug/
+*.vcxproj.user
+/VVMapInterface/.vs
+/ZLIBEX121/contrib/vstudio/vc7
+/ZLIBEX121/zlibex/.vs
+/ZLIBEX121/zlibex/zlibex___Win32_Unicode_Debug
+/ZLIBEX121/zlibex/zlibex_Win32_UDebug80
+/VVMapEditor/GuiLib/GUILIB/res/EN/GuiLib.aps
+/VVMapEditor/RES/EN/VVMapEditor.aps

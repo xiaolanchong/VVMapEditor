@@ -369,7 +369,8 @@ BOOL CGuiToolBarWnd::OnDropDown(NMHDR* pNMHDR, LRESULT* pRes)
 	GetToolBarCtrl().GetRect(m_nmTb.iItem, rc);
 	ClientToScreen(&rc);
 	int iElements =m_pArray.GetSize();
-	for(int i=0; i < iElements; i++)
+	int i = 0;
+	for(; i < iElements; i++)
 	{
 		if (((CDropmenu*)m_pArray[i])->nIDboton == (UINT)m_nmTb.iItem)
 		{
@@ -1408,7 +1409,7 @@ CSize  CGuiToolBarWnd::CalcLayout(DWORD dwMode, int nLength)
 
 			if ((m_dwStyle & CBRS_FLOATING) && (m_dwStyle & CBRS_SIZE_DYNAMIC))
 				m_nMRUWidth = sizeResult.cx;
-			for (i = 0; i < nCount; i++)
+			for (int i = 0; i < nCount; i++)
 				_SetButton(i, &pData[i]);
 
 			if (nControlCount > 0)

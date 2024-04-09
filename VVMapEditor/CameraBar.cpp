@@ -330,7 +330,7 @@ void CCameraBar::OnTimer(UINT nIDEvent)
 	CGuiControlBar::OnTimer(nIDEvent);
 }
 
-UINT CCameraBar::OnNcHitTest(CPoint point)
+LRESULT CCameraBar::OnNcHitTest(CPoint point)
 {
 	CRect rcPause(m_rcCloseBtn);
 	rcPause.OffsetRect( -(rcPause.Width() + 2), 0 );

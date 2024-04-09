@@ -166,7 +166,7 @@ void	CPointTree::Refresh()
 		int j;
 		int Max = pDoc->GetMaxGroup();
 
-		std::auto_ptr<CFilterCache> pFilter = pDoc->GetFilterCache();
+		std::unique_ptr<CFilterCache> pFilter = pDoc->GetFilterCache();
 		std::vector<HTREEITEM> htiParents( Max, (HTREEITEM)0 );
 
 		std::set<int> AllGroups = pDoc->GetAllValidGroups();

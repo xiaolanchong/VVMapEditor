@@ -231,7 +231,7 @@ void CVVMapEditorView::OnMapImage()
 	try
 	{
 		fileImage.Read( &BinArr[0], nSize );
-		m_Background = std::auto_ptr<CBackground> ( new CImageBackground( &BinArr[0], nSize) );
+		m_Background = std::unique_ptr<CBackground> ( new CImageBackground( &BinArr[0], nSize) );
 		CSize size = m_Background->GetSize();
 		SetScrollSizes( MM_TEXT, size );
 		Invalidate();
@@ -240,7 +240,7 @@ void CVVMapEditorView::OnMapImage()
 	}
 	catch(CException*)
 	{
-		m_Background = std::auto_ptr<CBackground> ( new CEmptyBackground );
+		m_Background = std::unique_ptr<CBackground> ( new CEmptyBackground );
 		AfxMessageBox( IDS_EXC_INVALID_IMAGE_FILE, MB_OK | MB_ICONERROR );
 	}
 
@@ -355,7 +355,7 @@ void CVVMapEditorView::OnLButtonDown(UINT nFlags, CPoint point)
 			if( !m_EditorState.m_CurrentPoly.get())
 			{
 				StartEditIZ();
-				m_EditorState.m_CurrentPoly = std::auto_ptr<CFigPolyline>( new CFigPolyline(ptf) );
+				m_EditorState.m_CurrentPoly = std::unique_ptr<CFigPolyline>( new CFigPolyline(ptf) );
 			}
 			else
 			{
@@ -429,7 +429,7 @@ void	CVVMapEditorView::DrawPoints(Graphics& gr/*, const CRect& rcClient*/)
 		const PointArr_t& pt = pDoc->Points().m_MapPoints;
 		int nPointNumber = 0;
 
-		std::auto_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
+		std::unique_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
 		for( int i = 0;i < pt.size(); ++i )
 		{
 			if (pt[i].first && FilterCache->IsPointValid( i, c_nMapIndex ) )
@@ -745,7 +745,7 @@ void CVVMapEditorView::OnRButtonDown(UINT nFlags, CPoint point)
 		pDoc->IsMapInCurrent() &&
 		pDoc->m_State == CVVMapEditorDoc::edit_points) 
 	{	
-		std::auto_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
+		std::unique_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
 		const PointArr_t& v = pDoc->Points().m_MapPoints;
 		for( int i=0; i < v.size(); ++i  )
 		{
@@ -880,7 +880,7 @@ void CVVMapEditorView::OnMouseMove(UINT nFlags, CPoint point)
 		SetTimer( IDT_GetPoint, 100, 0 );
 	}
 
-	std::auto_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
+	std::unique_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
 		const PointArr_t& Arr = pDoc->Points().m_MapPoints;
 		bool set = false;
 		for( int i=0;  i < Arr.size(); ++i)
@@ -1160,7 +1160,7 @@ void CVVMapEditorView::OnLButtonDblClk(UINT nFlags, CPoint point)
 			int nActiveZone = pDoc->AddIZPolygon( ptVec );
 			pDoc->SetActiveIZ( nActiveZone );
 		}
-		m_EditorState.m_CurrentPoly = std::auto_ptr<CFigPolyline>();
+		m_EditorState.m_CurrentPoly = std::unique_ptr<CFigPolyline>();
 		m_EditorState.m_State = EditorState::NONE;
 		Invalidate();
 		EndEditIZ();
@@ -1189,7 +1189,7 @@ void	CVVMapEditorView::EndEditIZ()
 {
 	ClipCursor(0);
 	ReleaseCapture();
-	m_EditorState.m_CurrentPoly = std::auto_ptr<CFigPolyline>(0);
+	m_EditorState.m_CurrentPoly = std::unique_ptr<CFigPolyline>();
 	m_EditorState.m_State = EditorState::NONE;
 }
 
@@ -1341,7 +1341,7 @@ int		CVVMapEditorView::FindCorrPointOnMap( CPoint point )
 	//NOTENOTE: 10/15/2004 now with point filter
 	if( !pDoc->m_bShowCommonPoints ) return -1;
 	const PointArr_t& Arr = pDoc->Points().m_MapPoints;
-	std::auto_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
+	std::unique_ptr<CFilterCache> FilterCache = pDoc->GetFilterCache();
 	for( int i=0;  i < Arr.size(); ++i)
 	{
 		if( Arr[i].first && FilterCache->IsPointValid( i, c_nMapIndex ) )
@@ -1488,7 +1488,7 @@ bool	CVVMapEditorView::GetMapInfo()
 		bi.bmiHeader.biPlanes = 1;
 		try
 		{
-			m_Background = std::auto_ptr<CBackground>(new CBitmapBackground(&bi, pbits) );
+			m_Background = std::unique_ptr<CBackground>(new CBitmapBackground(&bi, pbits) );
 		}
 		catch( ImageFileException& )
 		{
@@ -1505,12 +1505,12 @@ bool	CVVMapEditorView::GetMapInfo()
 	{
 		try
 		{
-		m_Background = std::auto_ptr<CBackground>(new CImageBackground( pData, nSize) );
+		m_Background = std::unique_ptr<CBackground>(new CImageBackground( pData, nSize) );
 		}
 		catch( CommonException )
 		{
 			AfxMessageBox( IDS_EXC_INVALID_IMAGE_FILE, MB_OK|MB_ICONERROR );
-			m_Background = std::auto_ptr<CBackground>(new CEmptyBackground( ) );
+			m_Background = std::unique_ptr<CBackground>(new CEmptyBackground( ) );
 		}
 	}
 	return false;

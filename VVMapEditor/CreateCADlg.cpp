@@ -69,7 +69,7 @@ void CCreateCADlg::OnAddAll()
 		v.push_back(s);
 	}
 	m_listUnselect.ResetContent();
-	for( i=0; i < v.size(); ++i )
+	for( size_t i=0; i < v.size(); ++i )
 	{
 		m_listSelect.AddString( v[i] );
 	}	
@@ -97,7 +97,7 @@ void CCreateCADlg::OnRemoveAll()
 		v.push_back(s);
 	}
 	m_listSelect.ResetContent();
-	for( i=0; i < v.size(); ++i )
+	for(size_t i=0; i < v.size(); ++i )
 	{
 		m_listUnselect.AddString( v[i] );
 	}
